@@ -1,0 +1,1546 @@
+<div ng-show="!loading" aria-hidden="false" class="">
+    <bws-banner design-type="Header" stockcode="product.Stockcode" class="ng-isolate-scope"><section>
+<!-- ngRepeat: banner in banners -->
+</section>
+</bws-banner>
+    <section class="bg--white section section--product-details is-product-on-special" ng-class="{'is-product-on-special' : product.IsOnSpecial === true || !!product.CentreTag.TagContent, 'restricted-product' : restrictedCategory}">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-1 product-details-img-container">
+                    <!-- ngIf: !restrictedCategory --><div ng-if="!restrictedCategory" class="text-left visible-xs productTile_rating ng-pristine ng-untouched ng-valid ng-scope ng-isolate-scope ng-not-empty" wow-star-rating="" is-read-only="true" number-of-stars="5" ng-model="productParent.OverallRating" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --><span class="icon--halfstar ng-scope" ng-if="star.isHalfRating"></span><!-- end ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">3.5</span></span>
+    <div class="star-rating-info" ng-transclude="">
+                        <div class="rating ng-scope">
+                            <span class="rating_count ng-binding">(9)</span>
+                        </div>
+                        <!-- ngIf: productParent.NumberOfReviews > 0 --><div ng-if="productParent.NumberOfReviews &gt; 0" class="sr-only ng-scope" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                            <span itemprop="ratingValue" class="ng-binding">3.3333</span>
+                            <span itemprop="reviewCount" class="ng-binding">9</span>
+                        </div><!-- end ngIf: productParent.NumberOfReviews > 0 -->
+                    </div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</div><!-- end ngIf: !restrictedCategory -->
+
+                    <!-- Percentage off and fixed price promotional tag -->
+                    <!-- ngIf: ctrl.showPercentageOffBadge && !showGoogleShopping -->
+
+                    <!-- ngIf: !ctrl.showAppyDeals && !showGoogleShopping && showSavingsBadge && (savingsAmount > 0) --><savings-badge savings-amount="savingsAmount" size="sm" ng-if="!ctrl.showAppyDeals &amp;&amp; !showGoogleShopping &amp;&amp; showSavingsBadge &amp;&amp; (savingsAmount &gt; 0)" class="productTile_savingsBadge ng-scope ng-isolate-scope" ng-class="{'productTile_savingsBadge-type-2': product.PercentageOffTag.TagType !== 'None' || product.FixedPricePromoTag.TagType !== 'None'}"><span class="badge-product badge--circle badge--saving badge--circle-sm" ng-class="::ctrl.classes">
+<span class="badge_title">
+    save
+    <span class="badge_subtitle ng-binding">
+        <sup>$</sup>3<!-- ngIf: (ctrl.savingsAmount | bwsCents) !== '00' --><sup ng-if="(ctrl.savingsAmount | bwsCents) !== '00'" class="ng-binding ng-scope">50</sup><!-- end ngIf: (ctrl.savingsAmount | bwsCents) !== '00' -->
+    </span>
+
+</span>
+</span></savings-badge><!-- end ngIf: !ctrl.showAppyDeals && !showGoogleShopping && showSavingsBadge && (savingsAmount > 0) -->
+
+                    <!-- ngIf: showSuperSaversBadge -->
+
+                    <ul class="product-badges">
+                        <!-- ngRepeat: badge in getBadges() track by $index -->
+                    </ul>
+
+                    <!-- ngIf: slickConfigLoaded && carousel && carousel.length > 0 && !restrictedCategory --><slick settings="slickConfig" ng-if="slickConfigLoaded &amp;&amp; carousel &amp;&amp; carousel.length &gt; 0 &amp;&amp; !restrictedCategory" page="pdp" class="ng-scope ng-isolate-scope slick-initialized slick-slider" style="display: block;">
+                        <!-- ngRepeat: imageName in carousel track by $index --><div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 220px; transform: translate3d(0px, 0px, 0px);"><div class="product-detail-slick-item ng-scope slick-slide slick-current slick-active" ng-repeat="imageName in carousel track by $index" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 220px;">
+                            <img-product img-alt="Colossal Brewing Hextra Terrestrial Hazy Xpa Can 375ml  4 Pack" img-class="product-image" img-name="imageName" img-size="md" ng-click="toggleImageZoomPopup()" class="ng-isolate-scope" role="button" tabindex="0"><div class="bws-product-image-lazy-transition-wrapper">
+<img class="product-image" ng-src="https://edgmedia.bws.com.au/bws/media/products/975336-1.png?impolicy=Prod_MD" loading="lazy" alt="Colossal Brewing Hextra Terrestrial Hazy Xpa Can 375ml  4 Pack" src="https://edgmedia.bws.com.au/bws/media/products/975336-1.png?impolicy=Prod_MD">
+</div>
+</img-product>
+
+                        </div></div></div><!-- end ngRepeat: imageName in carousel track by $index -->
+                    </slick><!-- end ngIf: slickConfigLoaded && carousel && carousel.length > 0 && !restrictedCategory -->
+
+                    <div class="default-image">
+                        <!-- ngIf: carousel && carousel.length === 0 -->
+                    </div>
+
+                    <!-- ngIf: !restrictedCategory --><button ng-if="!restrictedCategory" ng-click="toggleImageZoomPopup()" class="icon--zoom-icon ng-scope"><span class="sr-only">View large product images</span></button><!-- end ngIf: !restrictedCategory -->
+                </div>
+
+                <div class="col-sm-6 col-sm-offset-1 product-details">
+                    <!-- ngIf: ::!restrictedCategory --><div class="text-right hidden-xs ng-scope" ng-if="::!restrictedCategory">
+                        <a ui-sref="shop.search([object Object])" ng-click="handleViewAllBrandClick(productDetails.brand_name)" class="breadcrumb">View all <span class="text-capitalize ng-binding">Colossal Brewing</span>
+                            products <span class="icon--xxs icon--right_arrow icon--xxs" role="presentation">
+                            </span></a>
+                    </div><!-- end ngIf: ::!restrictedCategory -->
+
+                    <div class="text-center visible-xs productTile_tag--isHidden" ng-class="{'productTile_tag--isHidden' : product.CentreTag &amp;&amp; !product.CentreTag.TagContent}">
+                        <div class="productTile_tag">
+                            <span ng-bind-html="product.CentreTag.TagContent" class="ng-binding"></span>
+                        </div>
+                    </div>
+
+                    <bws-detail-item product="productDetails" class="detail-item ng-isolate-scope"><div class="detail-item">
+<h1 class="detail-item_brand header--color-secondary">
+    <span itemprop="brand" itemscope="" itemtype="http://schema.org/Brand">
+        <span itemprop="name" class="ng-binding">Colossal Brewing</span>
+    </span>
+    <div itemprop="name" class="detail-item_title title--type-2 h2 header--color-secondary ng-binding">Hextra Terrestrial Hazy XPA Can 375mL</div>
+</h1>
+</div></bws-detail-item>
+                   
+                    <!-- ngIf: ::!restrictedCategory --><div class="text-center visible-xs ng-scope" ng-if="::!restrictedCategory">
+                        <small><strong><a ui-sref="shop.search([object Object])" ng-click="handleViewAllBrandClick(productDetails.brand_name)" class="breadcrumb">View all <span class="text-capitalize ng-binding">Colossal Brewing</span>
+                                    products <span class="icon--xxs icon--right_arrow icon--xxs" role="presentation">
+                                    </span></a></strong></small>
+                    </div><!-- end ngIf: ::!restrictedCategory -->
+
+                    <!-- ngIf: !restrictedCategory --><div ng-if="!restrictedCategory" class="hidden-xs productTile_rating ng-pristine ng-untouched ng-valid ng-scope ng-isolate-scope ng-not-empty" wow-star-rating="" is-read-only="true" number-of-stars="5" ng-model="productParent.OverallRating" bws-scroll-to-element="write-review" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --><span class="icon--halfstar ng-scope" ng-if="star.isHalfRating"></span><!-- end ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">3.5</span></span>
+    <div class="star-rating-info" ng-transclude="">
+                        <div class="rating ng-scope">
+                            <!-- ngIf: productParent.NumberOfReviews > 0 --><span ng-if="productParent.NumberOfReviews &gt; 0" class="ng-scope"><span class="rating_count ng-binding" ng-bind="productParent.NumberOfReviews">9</span><span class="rating_desc">Review<ng-pluralize count="productParent.NumberOfReviews" when="{'one': '', '2': 's', 'other': 's'}">s</ng-pluralize></span></span><!-- end ngIf: productParent.NumberOfReviews > 0 -->
+                            <!-- ngIf: productParent.NumberOfReviews === 0 -->
+                        </div>
+                    </div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</div><!-- end ngIf: !restrictedCategory -->
+
+                    <!-- ngIf: !showGoogleShopping --><ul ng-if="!showGoogleShopping" class="list--icons hidden-xs ng-scope">
+                        <li class="list--icons_item">
+
+                            <!-- ngIf: !storePicker.fulfilmentInfo.IsSystemAddress && !productParent.ProductData.hideprice --><span ng-if="!storePicker.fulfilmentInfo.IsSystemAddress &amp;&amp; !productParent.ProductData.hideprice" class="ng-scope">
+                                <span class="icon-circle--xxs icon-circle--primary" ng-class="{'icon-circle--primary' : product.IsAvailable &amp;&amp; product.StockOnHand &gt; 0, 'icon-circle--red' : !product.IsAvailable || productParent.ProductData.displayonly || product.IsAvailable &amp;&amp; product.StockOnHand === 0}">
+                                    <span ng-class="{'icon--tickmark' : product.IsAvailable &amp;&amp; !productParent.ProductData.displayonly &amp;&amp; product.StockOnHand &gt; 0, 'icon--crossmark' : !product.IsAvailable || productParent.ProductData.displayonly || product.IsAvailable &amp;&amp; product.StockOnHand === 0}" class="icon--tickmark"></span>
+                                </span>
+
+                                <span class="product-details_store-availability ng-binding">
+
+                                    <!-- ngIf: product.StockOnHand !== 0
+                                              && !productDetails.demanddrivenpreorder
+                                              && !productParent.ProductData.displayonly
+                                              && !restrictedCategory --><span ng-if="product.StockOnHand !== 0
+                                              &amp;&amp; !productDetails.demanddrivenpreorder
+                                              &amp;&amp; !productParent.ProductData.displayonly
+                                              &amp;&amp; !restrictedCategory" class="ng-scope">
+                                        <strong class="ng-binding">7</strong>
+
+                                    </span><!-- end ngIf: product.StockOnHand !== 0
+                                              && !productDetails.demanddrivenpreorder
+                                              && !productParent.ProductData.displayonly
+                                              && !restrictedCategory -->
+
+                                    Available
+
+                                    <!-- ngIf: !product.IsPreOrderEligible --><span ng-if="!product.IsPreOrderEligible" class="ng-binding ng-scope">
+                                        at
+                                    </span><!-- end ngIf: !product.IsPreOrderEligible -->
+
+                                    <!-- ngIf: product.IsPreOrderEligible -->
+
+                                    <strong class="ng-binding"><span>BWS </span>Murray Street</strong>
+                                </span>
+                            </span><!-- end ngIf: !storePicker.fulfilmentInfo.IsSystemAddress && !productParent.ProductData.hideprice -->
+                            <!-- ngIf: storePicker.fulfilmentInfo.IsSystemAddress -->
+
+                        </li>
+
+                        <!-- ngIf: product.BackorderStockOnHand > 0 && product.IsAvailable
+                                && product.StockOnHand === 0
+                                && !storePicker.fulfilmentInfo.IsSystemAddress -->
+
+                        <!-- ngIf: product.BackorderStockOnHand > 0 && product.IsAvailable
+                            && product.StockOnHand > 0
+                            && product.StockOnHand < product.ProductData.maxpurchasequantity
+                            && !storePicker.fulfilmentInfo.IsSystemAddress --><li ng-if="product.BackorderStockOnHand &gt; 0 &amp;&amp; product.IsAvailable
+                            &amp;&amp; product.StockOnHand &gt; 0
+                            &amp;&amp; product.StockOnHand &lt; product.ProductData.maxpurchasequantity
+                            &amp;&amp; !storePicker.fulfilmentInfo.IsSystemAddress" class="list--icons_item ng-scope">
+                            <span>
+                                <span class="icon-circle--xxs icon-circle--primary">
+                                    <span class="icon--tickmark"></span>
+                                </span>
+                                <span class="product-details_store-availability">Want more? Order now and pick up
+                                    by <strong class="ng-binding">Tuesday, 22 July</strong></span>
+                            </span>
+                        </li><!-- end ngIf: product.BackorderStockOnHand > 0 && product.IsAvailable
+                            && product.StockOnHand > 0
+                            && product.StockOnHand < product.ProductData.maxpurchasequantity
+                            && !storePicker.fulfilmentInfo.IsSystemAddress -->
+
+                        <!-- ngIf: preOrderMessage -->
+                        <!-- ngIf: deliveryMessage -->
+
+                    </ul><!-- end ngIf: !showGoogleShopping -->
+                    <!-- ngIf: !showGoogleShopping && !storePicker.fulfilmentInfo.IsSystemAddress && !productParent.ProductData.displayonly && !productParent.ProductData.hideprice --><p ng-if="!showGoogleShopping &amp;&amp; !storePicker.fulfilmentInfo.IsSystemAddress &amp;&amp; !productParent.ProductData.displayonly &amp;&amp; !productParent.ProductData.hideprice" class="hidden-xs ng-scope">
+                        <a href="" ng-click="toggleCheckStockPopup('Check stock availability and price in nearby stores')">Check stock availability and price in nearby stores<span class="icon--right_arrow icon--xxs"></span></a>
+                    </p><!-- end ngIf: !showGoogleShopping && !storePicker.fulfilmentInfo.IsSystemAddress && !productParent.ProductData.displayonly && !productParent.ProductData.hideprice -->
+
+                    <div class="hidden-xs productTile_tag--isHidden" ng-class="{'productTile_tag--isHidden' : product.CentreTag &amp;&amp; !product.CentreTag.TagContent}">
+                        <div class="productTile_tag">
+                            <span ng-bind-html="product.CentreTag.TagContent" class="ng-binding"></span>
+                        </div>
+                    </div>
+
+                    <!-- ngIf: ctrl.showAppyDeals -->
+
+                    <!-- ngIf: showGoogleShopping -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start: Controls -->
+    <section id="product-detail-contols-cart" class="container">
+        <div class="row">
+
+            <!-- ngIf: product.Price && !productParent.ProductData.hideprice --><div class="product-detail_controls js-product-detail_controls clearfix ng-scope" ng-if="product.Price &amp;&amp; !productParent.ProductData.hideprice">
+                <div class="clearfix product-detail_controls-wrapper">
+                    <!-- ngIf: !loading && !showGoogleShopping --><wow-trolley-controls ng-if="!loading &amp;&amp; !showGoogleShopping" default-product-code="::defaultProductCode" product-collection="::productCollection" productdetails="::product" use-trolley-quantity="true" on-update="onUpdateTrolley()" product="product" area="detail" class="ng-scope ng-isolate-scope"><div class="trolley-controls" ng-class="{'full-width': googleShopping}">
+<!-- ngIf: trolleyControlMessage -->
+
+<div class="text-center product-details_controls-container" role="group" aria-label="Colossal Brewing Hextra Terrestrial Hazy Xpa Can 375ml ">
+    <!-- Start: Volume Controls -->
+    <div class="product-detail_controls-col" ng-class="::{'product-detail_controls-col-hidden' : productCollection.Products.length === 1}">
+        <div class="trolley-controls__pack-selector">
+            <!-- ngRepeat: product in productCollection.Products | orderBy: sortByUnitQuantity() --><div class="trolley-controls_volume ng-scope" ng-repeat="product in productCollection.Products | orderBy: sortByUnitQuantity()" ng-class="{
+                    'selected': product.Stockcode === selectedProduct.Stockcode, 
+                    'disabled': parentProduct.ProductData.displayonly || !product.IsAvailable }">
+                <button class="icon--circle-empty icon--circle-thin-border icon--circle-empty--gray-300" ng-click="selectProductFamilyMember(product)">
+                    <!-- ngIf: product.ProductData.webpacktype === 'Case' -->
+                    <!-- ngIf: product.ProductData.webpacktype === 'Pack' -->
+                    <!-- ngIf: product.ProductData.displayunitquantity === '1' && product.ProductData.webpacktype !== 'Pack' && product.ProductData.webpacktype !== 'Case' --><span ng-if="product.ProductData.displayunitquantity === '1' &amp;&amp; product.ProductData.webpacktype !== 'Pack' &amp;&amp; product.ProductData.webpacktype !== 'Case'" class="icon--bottle ng-scope">
+                    </span><!-- end ngIf: product.ProductData.displayunitquantity === '1' && product.ProductData.webpacktype !== 'Pack' && product.ProductData.webpacktype !== 'Case' -->
+                </button>
+                <div class="trolley-controls_volume_title ng-binding">
+                    Can
+                    
+                </div>
+                <!-- ngIf: !googleShopping --><div class="trolley-controls_volume_price ng-scope" ng-if="!googleShopping">
+                    <span class="trolley-controls_volume_price--dollarsign">$</span>
+                    <span class="trolley-controls_volume_price--dollars ng-binding" ng-bind-html="product.Price | bwsDollars">6</span>
+                    <!-- ngIf: (product.Price | bwsCents) !== '00' -->
+                </div><!-- end ngIf: !googleShopping -->
+            </div><!-- end ngRepeat: product in productCollection.Products | orderBy: sortByUnitQuantity() --><div class="trolley-controls_volume ng-scope selected" ng-repeat="product in productCollection.Products | orderBy: sortByUnitQuantity()" ng-class="{
+                    'selected': product.Stockcode === selectedProduct.Stockcode, 
+                    'disabled': parentProduct.ProductData.displayonly || !product.IsAvailable }">
+                <button class="icon--circle-empty icon--circle-thin-border icon--circle-empty--gray-300" ng-click="selectProductFamilyMember(product)">
+                    <!-- ngIf: product.ProductData.webpacktype === 'Case' -->
+                    <!-- ngIf: product.ProductData.webpacktype === 'Pack' --><span ng-if="product.ProductData.webpacktype === 'Pack'" class="icon--pack ng-scope"></span><!-- end ngIf: product.ProductData.webpacktype === 'Pack' -->
+                    <!-- ngIf: product.ProductData.displayunitquantity === '1' && product.ProductData.webpacktype !== 'Pack' && product.ProductData.webpacktype !== 'Case' -->
+                </button>
+                <div class="trolley-controls_volume_title ng-binding">
+                    Pack
+                    (4)
+                </div>
+                <!-- ngIf: !googleShopping --><div class="trolley-controls_volume_price ng-scope" ng-if="!googleShopping">
+                    <span class="trolley-controls_volume_price--dollarsign">$</span>
+                    <span class="trolley-controls_volume_price--dollars ng-binding" ng-bind-html="product.Price | bwsDollars">18</span>
+                    <!-- ngIf: (product.Price | bwsCents) !== '00' -->
+                </div><!-- end ngIf: !googleShopping -->
+            </div><!-- end ngRepeat: product in productCollection.Products | orderBy: sortByUnitQuantity() --><div class="trolley-controls_volume ng-scope" ng-repeat="product in productCollection.Products | orderBy: sortByUnitQuantity()" ng-class="{
+                    'selected': product.Stockcode === selectedProduct.Stockcode, 
+                    'disabled': parentProduct.ProductData.displayonly || !product.IsAvailable }">
+                <button class="icon--circle-empty icon--circle-thin-border icon--circle-empty--gray-300" ng-click="selectProductFamilyMember(product)">
+                    <!-- ngIf: product.ProductData.webpacktype === 'Case' --><span ng-if="product.ProductData.webpacktype === 'Case'" class="icon--case ng-scope"></span><!-- end ngIf: product.ProductData.webpacktype === 'Case' -->
+                    <!-- ngIf: product.ProductData.webpacktype === 'Pack' -->
+                    <!-- ngIf: product.ProductData.displayunitquantity === '1' && product.ProductData.webpacktype !== 'Pack' && product.ProductData.webpacktype !== 'Case' -->
+                </button>
+                <div class="trolley-controls_volume_title ng-binding">
+                    Case
+                    (16)
+                </div>
+                <!-- ngIf: !googleShopping --><div class="trolley-controls_volume_price ng-scope" ng-if="!googleShopping">
+                    <span class="trolley-controls_volume_price--dollarsign">$</span>
+                    <span class="trolley-controls_volume_price--dollars ng-binding" ng-bind-html="product.Price | bwsDollars">63</span>
+                    <!-- ngIf: (product.Price | bwsCents) !== '00' -->
+                </div><!-- end ngIf: !googleShopping -->
+            </div><!-- end ngRepeat: product in productCollection.Products | orderBy: sortByUnitQuantity() -->
+        </div>
+    </div>
+    <!-- ngIf: googleShopping && googleShoppingDetails -->
+    <!-- ngIf: (googleShopping && !isSystemAddress) || (!googleShopping) --><div class="product-detail_controls-col ng-scope" ng-if="(googleShopping &amp;&amp; !isSystemAddress) || (!googleShopping)">
+        <!-- ngIf: googleShopping && !isSystemAddress -->
+        <!-- ngIf: area !== 'checkout' && area !== 'Product tile overlay' --><h1 class="product-details_controls_title ng-binding ng-scope" ng-if="area !== 'checkout' &amp;&amp; area !== 'Product tile overlay'">
+            <sup>$</sup>18<sup class="ng-binding">00</sup>
+        </h1><!-- end ngIf: area !== 'checkout' && area !== 'Product tile overlay' -->
+        <!-- ngIf: googleShopping && !isSystemAddress -->
+        <!-- ngIf: !googleShopping --><div class="trolley-controls__qty-selector ng-scope" ng-if="!googleShopping">
+            <button type="button" class="icon--circle-empty icon--circle--xs icon--circle-empty--primary" ng-class="::{'icon--circle--sm' : area === 'checkout' }" ng-click="decrement()">
+                <span class="sr-only">Decrease order amount</span><span class="icon--hyphen"></span>
+            </button>
+
+            <!-- ngIf: supplyLimitReached && area === 'detail' -->
+            <input type="number" class="quantity-input ng-pristine ng-untouched ng-valid ng-not-empty ng-valid-min ng-valid-maxlength" id="" ng-model="quantity" min="1" ng-change="updateTextInput(quantity)" ng-disabled="!product.IsAvailable|| parentProduct.ProductData.displayonly  || supplyLimitReached " maxlength="5" aria-invalid="false">
+
+            <button type="button" class="icon--circle-empty icon--circle--xs icon--circle-empty--primary" ng-class="::{'icon--circle--sm' : area === 'checkout' }" ng-click="increment()" ng-disabled="!product.IsAvailable|| parentProduct.ProductData.displayonly  || supplyLimitReached ">
+                <span class="sr-only">Increase order amount</span><span class="icon--plus"></span>
+            </button>
+        </div><!-- end ngIf: !googleShopping -->
+        <!-- ngIf: area === 'Product tile overlay' -->
+        <label for="">
+            <span class="sr-only">Order quantity</span>
+        </label>
+    </div><!-- end ngIf: (googleShopping && !isSystemAddress) || (!googleShopping) -->
+</div>
+<!-- End: Volume Controls -->
+</div>
+
+<script type="text/ng-template" id="bo-gsstore-modal">
+<div class="modal-header">
+    <div class="clearfix">
+        <span class="icon--crossmark pull-right icon--modal-close" ng-click="closePopup('close')"></span>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h4>Continuing will update your set store</h4>
+            <p ng-if="googleShoppingDetails">To buy this product online for the Google advertised price, continue and update your set store to <strong> BWS {{googleShoppingDetails.StoreName}} </strpng></p>
+            <div class="gs available-items" ng-if="availableTrolleyItems">{{availableTrolleyItems.AvailableTrolleyItems}} of {{availableTrolleyItems.TotalTrolleyItems}} items in cart available</div>
+            <div class="modal-actions">
+            <a href="javascript:void(0);" class="gs go-back-link" ng-click="closePopup('goback')">Go back</a>
+            <button class="btn btn-secondary btn--has-icon" ng-click="continueAndUpdate()">
+                Continue and update
+                <span class="icon--right_arrow"></span>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+</script>
+
+<script type="text/ng-template" id="price-diff-modal">
+<div class="modal-header">
+    <div class="clearfix">
+        <span class="icon--crossmark pull-right icon--modal-close" ng-click="closePopup()"></span>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h4>Why are prices different?</h4>
+            <p>Differences in state regulations on alcohol can cause prices to vary place-to-place.</p>
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="find-me-nearby">
+
+<div class="modal-header">
+    <div class="clearfix">
+        <span class="icon--crossmark pull-right icon--modal-close" ng-click="closePopup()"></span>
+    </div>
+</div>
+<div class="modal-body">
+    <stock-nearby-locator
+        ng-class="{'modal-restricted-product' : restrictedCategory}"
+        pack-size="product.ProductData.webpacktype"
+        stock-code="product.Stockcode"
+        promotion-type="product.PromotionType"
+        ng-if="product.Stockcode"
+    ></stock-nearby-locator>
+</div>
+
+</script></wow-trolley-controls><!-- end ngIf: !loading && !showGoogleShopping -->
+
+                    <!-- ngIf: !loading && showGoogleShopping -->
+                   
+                    <!-- ngIf: !showGoogleShopping --><div ng-if="!showGoogleShopping" class="product-detail_btn-group-container ng-scope">
+                        <div class="product-detail_btn-group">
+                            <div class="productTile_controls">
+
+                                <!-- Start: Watch list tool tip -->
+                                <div class="tooltip top product-details_tooltip" role="tooltip" ng-class="{'animated bounceInDown is-active' : isWatched}">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner">
+                                        <h5 class="tooltip_title title h5">Saved to your Favourites</h5>
+                                        <p class="tooltip_message">
+                                            Keep all your favourite drops in the one place
+                                            <a ui-sref="shop.watchlist" href="/favourites">Open Watchlist</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- End: Watch list tool tip -->
+
+                                <button class="btn--watch btn btn-secondary" ng-class="{'btn-active' : productDefault.IsWatched}" ng-click="hideTooltip($event); toggleWatchList(productDefault.Stockcode);">
+
+                                    <span class="icon--heart"></span>
+                                </button>
+                                <!-- add to cart -->
+                                <!-- ngIf: !product.IsPreOrderEligible && product.IsAvailable && !productParent.ProductData.displayonly --><button ng-if="!product.IsPreOrderEligible &amp;&amp; product.IsAvailable &amp;&amp; !productParent.ProductData.displayonly" class="btn--add-to-cart btn--has-icon btn btn-primary text-left ng-scope" ng-click="productCollection.IsInTrolley &amp;&amp; product.IsInTrolley &amp;&amp; (productCollection.QuantityInTrolley === currentControlsQty) ? openCart() : addOrUpdateTrolley()" ng-class="{'btn-green': productCollection.IsInTrolley || productCollection.IsInTrolley &amp;&amp; (productCollection.QuantityInTrolley !== currentControlsQty) }">
+                                    <span ng-show="!productCollection.IsInTrolley" aria-hidden="false">Add to </span>
+                                    <span ng-show="(productCollection.IsInTrolley &amp;&amp; product.IsInTrolley) &amp;&amp; (productCollection.QuantityInTrolley === currentControlsQty)" aria-hidden="true" class="ng-hide">Checkout</span>
+                                    <span ng-show="(productCollection.IsInTrolley &amp;&amp; !product.IsInTrolley) || (product.IsInTrolley &amp;&amp; productCollection.QuantityInTrolley !== currentControlsQty)" aria-hidden="true" class="ng-hide">Update</span>
+                                    <!-- ngIf: !productCollection.IsInTrolley --><span ng-if="!productCollection.IsInTrolley" class="hidden-xs ng-scope">Cart</span><!-- end ngIf: !productCollection.IsInTrolley -->
+                                    <span class="icon--shoppingcart"></span>
+                                </button><!-- end ngIf: !product.IsPreOrderEligible && product.IsAvailable && !productParent.ProductData.displayonly -->
+
+                                <!-- pre-order -->
+                                <!-- ngIf: product.IsPreOrderEligible && product.IsAvailable && !productParent.ProductData.displayonly -->
+
+
+
+                                <!-- ngIf: !product.IsAvailable || productParent.ProductData.displayonly -->
+
+
+                            </div>
+                        </div>
+                    </div><!-- end ngIf: !showGoogleShopping -->
+                </div>
+            </div><!-- end ngIf: product.Price && !productParent.ProductData.hideprice -->
+        </div>
+    </section>
+    <!-- End: Controls -->
+
+    <!-- Sart: Mobile stock availability -->
+    <!-- ngIf: !showGoogleShopping --><section class="section section--type-3 bg--white text-center visible-xs ng-scope" ng-if="!showGoogleShopping">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="sr-only">Check nearby stores for delivery</h1>
+                    <ul class="list--icons">
+                        <li class="list--icons_item">
+                            <!-- Start: Click and Collect -->
+                            <!-- ngIf: !storePicker.fulfilmentInfo.IsSystemAddress && !productParent.ProductData.hideprice --><span ng-if="!storePicker.fulfilmentInfo.IsSystemAddress &amp;&amp; !productParent.ProductData.hideprice" class="ng-scope">
+                                <span class="icon-circle--xxs icon-circle--primary" ng-class="{'icon-circle--primary' : product.IsAvailable &amp;&amp; product.StockOnHand &gt; 0, 'icon-circle--red' : !product.IsAvailable || productParent.ProductData.displayonly || product.IsAvailable &amp;&amp; product.StockOnHand === 0}">
+                                    <span ng-class="{'icon--tickmark' : product.IsAvailable &amp;&amp; !productParent.ProductData.displayonly &amp;&amp; product.StockOnHand &gt; 0, 'icon--crossmark' : !product.IsAvailable || productParent.ProductData.displayonly || product.IsAvailable &amp;&amp; product.StockOnHand === 0}" class="icon--tickmark"></span>
+                                </span>
+                                <span class="product-details_store-availability ng-binding">
+                                    <!-- ngIf: product.StockOnHand !== 0 &&
+                                                !productDetails.demanddrivenpreorder &&
+                                                !productParent.ProductData.displayonly &&
+                                                !restrictedCategory --><span ng-if="product.StockOnHand !== 0 &amp;&amp;
+                                                !productDetails.demanddrivenpreorder &amp;&amp;
+                                                !productParent.ProductData.displayonly &amp;&amp;
+                                                !restrictedCategory" class="ng-binding ng-scope">7</span><!-- end ngIf: product.StockOnHand !== 0 &&
+                                                !productDetails.demanddrivenpreorder &&
+                                                !productParent.ProductData.displayonly &&
+                                                !restrictedCategory -->
+
+                                    Available
+
+                                    <!-- ngIf: !product.IsPreOrderEligible --><span ng-if="!product.IsPreOrderEligible" class="ng-binding ng-scope">
+                                        at
+                                    </span><!-- end ngIf: !product.IsPreOrderEligible -->
+
+                                    <!-- ngIf: product.IsPreOrderEligible -->
+
+                                    <strong class="ng-binding"><span>BWS </span>Murray Street</strong>
+                                </span>
+
+                                <!-- ngIf: storePicker.fulfilmentInfo.IsSystemAddress -->
+                                
+                                <div class="hidden-xs productTile_tag--isHidden" ng-class="{'productTile_tag--isHidden' : product.CentreTag &amp;&amp; !product.CentreTag.TagContent}">
+                                    <div class="productTile_tag">
+                                        <span ng-bind-html="product.CentreTag.TagContent" class="ng-binding"></span>
+                                    </div>
+                                </div>
+
+                            </span><!-- end ngIf: !storePicker.fulfilmentInfo.IsSystemAddress && !productParent.ProductData.hideprice -->
+                            <!-- End: Click and Collect -->
+                        </li>
+
+                        <!-- ngIf: product.BackorderStockOnHand > 0 && product.IsAvailable
+                                && product.StockOnHand === 0
+                                && !storePicker.fulfilmentInfo.IsSystemAddress -->
+
+                        <!-- ngIf: product.BackorderStockOnHand > 0 && product.IsAvailable
+                            && product.StockOnHand > 0
+                            && product.StockOnHand < product.ProductData.maxpurchasequantity
+                            && !storePicker.fulfilmentInfo.IsSystemAddress --><li ng-if="product.BackorderStockOnHand &gt; 0 &amp;&amp; product.IsAvailable
+                            &amp;&amp; product.StockOnHand &gt; 0
+                            &amp;&amp; product.StockOnHand &lt; product.ProductData.maxpurchasequantity
+                            &amp;&amp; !storePicker.fulfilmentInfo.IsSystemAddress" class="list--icons_item ng-scope">
+                            <span>
+                                <span class="icon-circle--xxs icon-circle--primary">
+                                    <span class="icon--tickmark"></span>
+                                </span>
+                                <span class="product-details_store-availability">Want more? Order now and pick up
+                                    by <strong class="ng-binding">Tuesday, 22 July</strong></span>
+                            </span>
+                        </li><!-- end ngIf: product.BackorderStockOnHand > 0 && product.IsAvailable
+                            && product.StockOnHand > 0
+                            && product.StockOnHand < product.ProductData.maxpurchasequantity
+                            && !storePicker.fulfilmentInfo.IsSystemAddress -->
+
+                        <!-- ngIf: preOrderMessage -->
+                        <!-- ngIf: deliveryMessage -->
+
+                    </ul>
+
+                    <!-- ngIf: !storePicker.fulfilmentInfo.IsSystemAddress && !productParent.ProductData.displayonly && !productParent.ProductData.hideprice --><a class="link-underline ng-scope" href="" ng-click="toggleCheckStockPopup('Check stock availability and price in nearby stores')" ng-if="!storePicker.fulfilmentInfo.IsSystemAddress &amp;&amp; !productParent.ProductData.displayonly &amp;&amp; !productParent.ProductData.hideprice">
+                        Check stock availability and price in nearby stores
+                    </a><!-- end ngIf: !storePicker.fulfilmentInfo.IsSystemAddress && !productParent.ProductData.displayonly && !productParent.ProductData.hideprice -->
+                </div>
+            </div>
+        </div>
+    </section><!-- end ngIf: !showGoogleShopping -->
+    <!-- End: Mobile stock availability -->
+
+    <!-- ngIf: product.ProductsInSameOffer.Items.length -->
+
+    <!-- Start: Bazaar voice integration -->
+
+    <!-- ngIf: !restrictedCategory --><wow-review-overview ng-if="!restrictedCategory" view-mode="preview" scroll-to-element-target="write-review" department="department" id="product-detail-reviews" class="ng-scope ng-isolate-scope"><div class="container review-overview">
+<div class="row">
+    <div class="col-md-12" ng-hide="vm.isAddingReview &amp;&amp; !vm.user.isGuest" aria-hidden="false">
+        <ng-transclude>
+        <wow-product-review-heading title="Reviews" class="ng-scope ng-isolate-scope"><div class="text-center">
+<div class="title-container">
+    <h1 class="review-overview-title title header--color-secondary ng-binding">Reviews</h1>
+</div>
+<div ng-show="hasReviews()" aria-hidden="false" class="">
+    <div class="title-container review-overview-rating-title">
+        <h2 class="title--type-2 header--color-secondary">Overall Rating</h2>
+    </div>
+    <div class="review-overview-rating ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" wow-star-rating="" is-read-only="true" number-of-stars="5" ng-model="overall.rating" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --><span class="icon--halfstar ng-scope" ng-if="star.isHalfRating"></span><!-- end ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">3.5</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</div>
+    <div class="review-overview-summary ng-binding">
+        67% <small class="ng-binding">(6/9)</small> of reviewers would recommend this product to a friend
+    </div>
+</div>
+<div ng-show="!hasReviews()" aria-hidden="true" class="ng-hide">
+    <div class="title-container">
+        <h2 class="review-overview-subtitle title--type-2 header--color-secondary">Love it or hate it? <br>Be the first to write a review</h2>
+    </div>
+</div>
+<div class="review-overview-action">
+    <button ng-hide="user.isGuest" ng-click="switchToAdding()" class="btn btn-primary btn--has-icon ng-hide" aria-hidden="true">Write a review<span class="icon--right_arrow"></span></button>
+    <button ng-show="user.isGuest" ng-click="signIn()" class="btn btn-primary btn--has-icon" aria-hidden="false">Write a review<span class="icon--right_arrow"></span></button>
+</div>
+</div></wow-product-review-heading>
+    </ng-transclude>
+    </div>
+    <div class="col-md-12 text-center">
+        <div ng-hide="vm.isAddingReview &amp;&amp; !vm.user.isGuest" aria-hidden="false">
+            <div ng-switch="" on="viewMode">
+                <!-- ngSwitchWhen: all -->
+                <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-scope">
+                    <!-- ngIf: vm.isLoading -->
+                    <wow-preview-review-listing reviews="vm.reviews" total-number-of-reviews="vm.overall.totalReviews" view-more-href="vm.viewMoreHref" class="ng-isolate-scope">
+<div class="well--md preview-review">
+<div class="row js-top-reviews" scroll-to-element-target="js-top-reviews">
+    <wow-review-listing reviews="latestTwo" class="ng-isolate-scope"><section class="review-listing js-top-reviews">
+<div class="row flex-flow-sm">
+    <!-- ngRepeat: review in reviews --><div tabindex="-1" ng-repeat="review in reviews" class="col-sm-6 col-xs-12 flex-basis-mobile ng-scope">
+        <wow-review-card review="review" class="ng-isolate-scope"><!-- ngInclude: --><div class="review-card well well-review flex-height-sm ng-scope" ng-include="" src="view"><div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="ng-scope">
+<!-- ngIf: badge.label.length > 0 -->
+<div class="review-card-report text-right ng-hide" ng-hide="isGuestOrIsOwner(review.shopperId)" aria-hidden="true">
+    <a ng-hide="hasReported" href="javascript:void(0)" ng-click="report(review)" aria-hidden="false">report</a>
+    <span class="is-disabled ng-hide" ng-show="hasReported" aria-hidden="true">reported</span>
+</div>
+<div class="review-card-product text-center ng-hide" ng-show="review.displayOptions.hasProductName" aria-hidden="true">
+    <h3 ng-hide="review.displayOptions.hasProductLink" class="h3 title--type-2 header--color-secondary ng-binding" ng-bind="review.productTitle" aria-hidden="false">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+
+    <!-- ngIf: review.productTitle --><a ng-if="review.productTitle" ui-sref="shop.productdetails({productId:review.productId, productName: (review.productTitle | hyphenate) })" class="ng-scope" href="/product/299034/colossal-brewing-hextra-terrestrial-hazy-xpa-375ml">
+        <h3 class="h3 title--type-1 header--color-secondary ng-binding" ng-bind="review.productTitle">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+    </a><!-- end ngIf: review.productTitle -->
+</div>
+<div class="review-card-title">
+    <h2 itemprop="name" class="h2 title--type-3 header--color-secondary ng-binding" ng-bind="review.title">Random Hazy Find</h2>
+</div>
+<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="review-card-rating">
+    <wow-star-rating is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">5</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+    <span class="sr-only">This review has <span itemprop="ratingValue" class="ng-binding">5</span> stars</span>
+</div>
+<div class="review-card-date">
+    <span itemprop="datePublished" ng-bind="review.date | date: 'dd MMMM yyyy'" class="ng-binding">05 June 2025</span>
+</div>
+<div class="review-card-info">
+    <span itemprop="author" ng-show="isSyndicateReview || !review.displayOptions.hasProfileLink" class="review-card-info-name ng-binding" ng-bind="review.displayName" aria-hidden="false">BingeKing</span>
+    <a itemprop="author" ui-sref="reviews.urlFriendlyName({ urlDisplayName: review.urlDisplayName, shopperId: review.shopperId })" ng-show="review.displayOptions.hasProfileLink &amp;&amp; !isSyndicateReview" class="review-card-info-name ng-binding ng-hide" ng-bind="review.displayName" href="/customer-reviews/binge-king/1225487" aria-hidden="true">BingeKing</a>
+    <span class="review-card-info-age ng-binding" ng-bind="review.age"></span>,
+    <span class="review-card-info-location ng-binding" ng-bind="review.location"></span>
+    <!-- ngIf: review.wouldRecommend --><div class="review-card-recommend ng-scope" ng-if="review.wouldRecommend">
+            <span class="icon-circle--xxs icon-circle--primary">
+                <span class="icon--tickmark"></span>
+            </span>
+        <span>I would recommend this to a friend!</span>
+    </div><!-- end ngIf: review.wouldRecommend -->
+</div>
+<div itemprop="reviewBody" class="review-card-text ng-binding" ng-bind="review.description">First time grabbed these due to the limited range Dans has of any real beers, especially independents and found these to be an excellent find.
+
+Bitterness and Fruitiness is well balanced, really crispy and delicious.
+
+A rare find for an off the shelf.
+
+If you like NEIPAs you will like this.  Good value for what you get.</div>
+<!-- ngIf: isSyndicateReview --><div ng-if="isSyndicateReview" class="review-card-text ng-scope">Originally posted on danmurphys.com.au</div><!-- end ngIf: isSyndicateReview -->
+<div class="review-card-footer">
+    <div ng-hide="isGuestOrIsOwner(review.shopperId)" class="review-card-vote-btns ng-hide" ng-class="{ 'is-disabled': (hasVoted == true || isOwner(review.shopperId)) }" aria-hidden="true">
+        <button ng-class="{ 'is-active': vote.direction === 'up' }" ng-click="helpfulVote(true)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being helpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_up icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.yes">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+        <button ng-class="{ 'is-active': vote.direction === 'down' }" ng-click="helpfulVote(false)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being unhelpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_down icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.no">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+    </div>
+</div>
+
+</div>
+</div></wow-review-card>
+    </div><!-- end ngRepeat: review in reviews --><div tabindex="-1" ng-repeat="review in reviews" class="col-sm-6 col-xs-12 flex-basis-mobile ng-scope">
+        <wow-review-card review="review" class="ng-isolate-scope"><!-- ngInclude: --><div class="review-card well well-review flex-height-sm ng-scope" ng-include="" src="view"><div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="ng-scope">
+<!-- ngIf: badge.label.length > 0 -->
+<div class="review-card-report text-right ng-hide" ng-hide="isGuestOrIsOwner(review.shopperId)" aria-hidden="true">
+    <a ng-hide="hasReported" href="javascript:void(0)" ng-click="report(review)" aria-hidden="false">report</a>
+    <span class="is-disabled ng-hide" ng-show="hasReported" aria-hidden="true">reported</span>
+</div>
+<div class="review-card-product text-center ng-hide" ng-show="review.displayOptions.hasProductName" aria-hidden="true">
+    <h3 ng-hide="review.displayOptions.hasProductLink" class="h3 title--type-2 header--color-secondary ng-binding" ng-bind="review.productTitle" aria-hidden="false">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+
+    <!-- ngIf: review.productTitle --><a ng-if="review.productTitle" ui-sref="shop.productdetails({productId:review.productId, productName: (review.productTitle | hyphenate) })" class="ng-scope" href="/product/299034/colossal-brewing-hextra-terrestrial-hazy-xpa-375ml">
+        <h3 class="h3 title--type-1 header--color-secondary ng-binding" ng-bind="review.productTitle">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+    </a><!-- end ngIf: review.productTitle -->
+</div>
+<div class="review-card-title">
+    <h2 itemprop="name" class="h2 title--type-3 header--color-secondary ng-binding" ng-bind="review.title">Tasteless</h2>
+</div>
+<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="review-card-rating">
+    <wow-star-rating is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">2</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+    <span class="sr-only">This review has <span itemprop="ratingValue" class="ng-binding">2</span> stars</span>
+</div>
+<div class="review-card-date">
+    <span itemprop="datePublished" ng-bind="review.date | date: 'dd MMMM yyyy'" class="ng-binding">11 October 2024</span>
+</div>
+<div class="review-card-info">
+    <span itemprop="author" ng-show="isSyndicateReview || !review.displayOptions.hasProfileLink" class="review-card-info-name ng-binding" ng-bind="review.displayName" aria-hidden="false">Graeme</span>
+    <a itemprop="author" ui-sref="reviews.urlFriendlyName({ urlDisplayName: review.urlDisplayName, shopperId: review.shopperId })" ng-show="review.displayOptions.hasProfileLink &amp;&amp; !isSyndicateReview" class="review-card-info-name ng-binding ng-hide" ng-bind="review.displayName" href="/customer-reviews/graeme/6rqe5d847wyk7bs06q3lnl3tn" aria-hidden="true">Graeme</a>
+    <span class="review-card-info-age ng-binding" ng-bind="review.age"></span>,
+    <span class="review-card-info-location ng-binding" ng-bind="review.location">Melbourne</span>
+    <!-- ngIf: review.wouldRecommend -->
+</div>
+<div itemprop="reviewBody" class="review-card-text ng-binding" ng-bind="review.description">Sitting here comparing it to a pale ale , I think the “extra” is totally wrong - not an unpleasant drink , but certainly not an xpa !</div>
+<!-- ngIf: isSyndicateReview --><div ng-if="isSyndicateReview" class="review-card-text ng-scope">Originally posted on danmurphys.com.au</div><!-- end ngIf: isSyndicateReview -->
+<div class="review-card-footer">
+    <div ng-hide="isGuestOrIsOwner(review.shopperId)" class="review-card-vote-btns ng-hide" ng-class="{ 'is-disabled': (hasVoted == true || isOwner(review.shopperId)) }" aria-hidden="true">
+        <button ng-class="{ 'is-active': vote.direction === 'up' }" ng-click="helpfulVote(true)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being helpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_up icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.yes">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+        <button ng-class="{ 'is-active': vote.direction === 'down' }" ng-click="helpfulVote(false)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being unhelpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_down icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.no">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+    </div>
+</div>
+
+</div>
+</div></wow-review-card>
+    </div><!-- end ngRepeat: review in reviews -->
+</div>
+</section></wow-review-listing>
+</div>
+<div class="row related-reviews js-related-reviews collapse" scroll-to-element-target="js-latest-reviews" uib-collapse="isCollapsed" aria-expanded="false" aria-hidden="true" style="height: 0px;">
+    <wow-review-listing reviews="viewLatest" class="ng-isolate-scope"><section class="review-listing js-top-reviews">
+<div class="row flex-flow-sm">
+    <!-- ngRepeat: review in reviews --><div tabindex="-1" ng-repeat="review in reviews" class="col-sm-6 col-xs-12 flex-basis-mobile ng-scope">
+        <wow-review-card review="review" class="ng-isolate-scope"><!-- ngInclude: --><div class="review-card well well-review flex-height-sm ng-scope" ng-include="" src="view"><div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="ng-scope">
+<!-- ngIf: badge.label.length > 0 -->
+<div class="review-card-report text-right ng-hide" ng-hide="isGuestOrIsOwner(review.shopperId)" aria-hidden="true">
+    <a ng-hide="hasReported" href="javascript:void(0)" ng-click="report(review)" aria-hidden="false">report</a>
+    <span class="is-disabled ng-hide" ng-show="hasReported" aria-hidden="true">reported</span>
+</div>
+<div class="review-card-product text-center ng-hide" ng-show="review.displayOptions.hasProductName" aria-hidden="true">
+    <h3 ng-hide="review.displayOptions.hasProductLink" class="h3 title--type-2 header--color-secondary ng-binding" ng-bind="review.productTitle" aria-hidden="false">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+
+    <!-- ngIf: review.productTitle --><a ng-if="review.productTitle" ui-sref="shop.productdetails({productId:review.productId, productName: (review.productTitle | hyphenate) })" class="ng-scope" href="/product/299034/colossal-brewing-hextra-terrestrial-hazy-xpa-375ml">
+        <h3 class="h3 title--type-1 header--color-secondary ng-binding" ng-bind="review.productTitle">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+    </a><!-- end ngIf: review.productTitle -->
+</div>
+<div class="review-card-title">
+    <h2 itemprop="name" class="h2 title--type-3 header--color-secondary ng-binding" ng-bind="review.title">An excellent hazy!</h2>
+</div>
+<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="review-card-rating">
+    <wow-star-rating is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">5</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+    <span class="sr-only">This review has <span itemprop="ratingValue" class="ng-binding">5</span> stars</span>
+</div>
+<div class="review-card-date">
+    <span itemprop="datePublished" ng-bind="review.date | date: 'dd MMMM yyyy'" class="ng-binding">25 September 2024</span>
+</div>
+<div class="review-card-info">
+    <span itemprop="author" ng-show="isSyndicateReview || !review.displayOptions.hasProfileLink" class="review-card-info-name ng-binding" ng-bind="review.displayName" aria-hidden="false">Jay Dee</span>
+    <a itemprop="author" ui-sref="reviews.urlFriendlyName({ urlDisplayName: review.urlDisplayName, shopperId: review.shopperId })" ng-show="review.displayOptions.hasProfileLink &amp;&amp; !isSyndicateReview" class="review-card-info-name ng-binding ng-hide" ng-bind="review.displayName" href="/customer-reviews/jay-dee/9803443" aria-hidden="true">Jay Dee</a>
+    <span class="review-card-info-age ng-binding" ng-bind="review.age"></span>,
+    <span class="review-card-info-location ng-binding" ng-bind="review.location">Melbourne</span>
+    <!-- ngIf: review.wouldRecommend --><div class="review-card-recommend ng-scope" ng-if="review.wouldRecommend">
+            <span class="icon-circle--xxs icon-circle--primary">
+                <span class="icon--tickmark"></span>
+            </span>
+        <span>I would recommend this to a friend!</span>
+    </div><!-- end ngIf: review.wouldRecommend -->
+</div>
+<div itemprop="reviewBody" class="review-card-text ng-binding" ng-bind="review.description">Ok so this hazy surprised me with how good it is!! Right up there with the best of them such as Hop Nation Melbourne Fog and J-Juice!!! A true tropical fruit hazy with a very smooth finish!!</div>
+<!-- ngIf: isSyndicateReview --><div ng-if="isSyndicateReview" class="review-card-text ng-scope">Originally posted on danmurphys.com.au</div><!-- end ngIf: isSyndicateReview -->
+<div class="review-card-footer">
+    <div ng-hide="isGuestOrIsOwner(review.shopperId)" class="review-card-vote-btns ng-hide" ng-class="{ 'is-disabled': (hasVoted == true || isOwner(review.shopperId)) }" aria-hidden="true">
+        <button ng-class="{ 'is-active': vote.direction === 'up' }" ng-click="helpfulVote(true)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being helpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_up icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.yes">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+        <button ng-class="{ 'is-active': vote.direction === 'down' }" ng-click="helpfulVote(false)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being unhelpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_down icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.no">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+    </div>
+</div>
+
+</div>
+</div></wow-review-card>
+    </div><!-- end ngRepeat: review in reviews --><div tabindex="-1" ng-repeat="review in reviews" class="col-sm-6 col-xs-12 flex-basis-mobile ng-scope">
+        <wow-review-card review="review" class="ng-isolate-scope"><!-- ngInclude: --><div class="review-card well well-review flex-height-sm ng-scope" ng-include="" src="view"><div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="ng-scope">
+<!-- ngIf: badge.label.length > 0 -->
+<div class="review-card-report text-right ng-hide" ng-hide="isGuestOrIsOwner(review.shopperId)" aria-hidden="true">
+    <a ng-hide="hasReported" href="javascript:void(0)" ng-click="report(review)" aria-hidden="false">report</a>
+    <span class="is-disabled ng-hide" ng-show="hasReported" aria-hidden="true">reported</span>
+</div>
+<div class="review-card-product text-center ng-hide" ng-show="review.displayOptions.hasProductName" aria-hidden="true">
+    <h3 ng-hide="review.displayOptions.hasProductLink" class="h3 title--type-2 header--color-secondary ng-binding" ng-bind="review.productTitle" aria-hidden="false">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+
+    <!-- ngIf: review.productTitle --><a ng-if="review.productTitle" ui-sref="shop.productdetails({productId:review.productId, productName: (review.productTitle | hyphenate) })" class="ng-scope" href="/product/299034/colossal-brewing-hextra-terrestrial-hazy-xpa-375ml">
+        <h3 class="h3 title--type-1 header--color-secondary ng-binding" ng-bind="review.productTitle">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+    </a><!-- end ngIf: review.productTitle -->
+</div>
+<div class="review-card-title">
+    <h2 itemprop="name" class="h2 title--type-3 header--color-secondary ng-binding" ng-bind="review.title">Rubbish</h2>
+</div>
+<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="review-card-rating">
+    <wow-star-rating is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">1</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+    <span class="sr-only">This review has <span itemprop="ratingValue" class="ng-binding">1</span> stars</span>
+</div>
+<div class="review-card-date">
+    <span itemprop="datePublished" ng-bind="review.date | date: 'dd MMMM yyyy'" class="ng-binding">05 July 2024</span>
+</div>
+<div class="review-card-info">
+    <span itemprop="author" ng-show="isSyndicateReview || !review.displayOptions.hasProfileLink" class="review-card-info-name ng-binding" ng-bind="review.displayName" aria-hidden="false">RoyB</span>
+    <a itemprop="author" ui-sref="reviews.urlFriendlyName({ urlDisplayName: review.urlDisplayName, shopperId: review.shopperId })" ng-show="review.displayOptions.hasProfileLink &amp;&amp; !isSyndicateReview" class="review-card-info-name ng-binding ng-hide" ng-bind="review.displayName" href="/customer-reviews/roy-b/l4thod9uygcaezc27bn5b7y8t" aria-hidden="true">RoyB</a>
+    <span class="review-card-info-age ng-binding" ng-bind="review.age"></span>,
+    <span class="review-card-info-location ng-binding" ng-bind="review.location">Roselands</span>
+    <!-- ngIf: review.wouldRecommend -->
+</div>
+<div itemprop="reviewBody" class="review-card-text ng-binding" ng-bind="review.description">No taste, no aroma.  Like drinking water or the urine of a water buffalo.  A waste of money.</div>
+<!-- ngIf: isSyndicateReview --><div ng-if="isSyndicateReview" class="review-card-text ng-scope">Originally posted on danmurphys.com.au</div><!-- end ngIf: isSyndicateReview -->
+<div class="review-card-footer">
+    <div ng-hide="isGuestOrIsOwner(review.shopperId)" class="review-card-vote-btns ng-hide" ng-class="{ 'is-disabled': (hasVoted == true || isOwner(review.shopperId)) }" aria-hidden="true">
+        <button ng-class="{ 'is-active': vote.direction === 'up' }" ng-click="helpfulVote(true)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being helpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_up icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.yes">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+        <button ng-class="{ 'is-active': vote.direction === 'down' }" ng-click="helpfulVote(false)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being unhelpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_down icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.no">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+    </div>
+</div>
+
+</div>
+</div></wow-review-card>
+    </div><!-- end ngRepeat: review in reviews --><div tabindex="-1" ng-repeat="review in reviews" class="col-sm-6 col-xs-12 flex-basis-mobile ng-scope">
+        <wow-review-card review="review" class="ng-isolate-scope"><!-- ngInclude: --><div class="review-card well well-review flex-height-sm ng-scope" ng-include="" src="view"><div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="ng-scope">
+<!-- ngIf: badge.label.length > 0 -->
+<div class="review-card-report text-right ng-hide" ng-hide="isGuestOrIsOwner(review.shopperId)" aria-hidden="true">
+    <a ng-hide="hasReported" href="javascript:void(0)" ng-click="report(review)" aria-hidden="false">report</a>
+    <span class="is-disabled ng-hide" ng-show="hasReported" aria-hidden="true">reported</span>
+</div>
+<div class="review-card-product text-center ng-hide" ng-show="review.displayOptions.hasProductName" aria-hidden="true">
+    <h3 ng-hide="review.displayOptions.hasProductLink" class="h3 title--type-2 header--color-secondary ng-binding" ng-bind="review.productTitle" aria-hidden="false">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+
+    <!-- ngIf: review.productTitle --><a ng-if="review.productTitle" ui-sref="shop.productdetails({productId:review.productId, productName: (review.productTitle | hyphenate) })" class="ng-scope" href="/product/299034/colossal-brewing-hextra-terrestrial-hazy-xpa-375ml">
+        <h3 class="h3 title--type-1 header--color-secondary ng-binding" ng-bind="review.productTitle">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+    </a><!-- end ngIf: review.productTitle -->
+</div>
+<div class="review-card-title">
+    <h2 itemprop="name" class="h2 title--type-3 header--color-secondary ng-binding" ng-bind="review.title">Very nice HAZY!</h2>
+</div>
+<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="review-card-rating">
+    <wow-star-rating is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">5</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+    <span class="sr-only">This review has <span itemprop="ratingValue" class="ng-binding">5</span> stars</span>
+</div>
+<div class="review-card-date">
+    <span itemprop="datePublished" ng-bind="review.date | date: 'dd MMMM yyyy'" class="ng-binding">01 July 2024</span>
+</div>
+<div class="review-card-info">
+    <span itemprop="author" ng-show="isSyndicateReview || !review.displayOptions.hasProfileLink" class="review-card-info-name ng-binding" ng-bind="review.displayName" aria-hidden="false">Jeff M</span>
+    <a itemprop="author" ui-sref="reviews.urlFriendlyName({ urlDisplayName: review.urlDisplayName, shopperId: review.shopperId })" ng-show="review.displayOptions.hasProfileLink &amp;&amp; !isSyndicateReview" class="review-card-info-name ng-binding ng-hide" ng-bind="review.displayName" href="/customer-reviews/jeff-m/10937385" aria-hidden="true">Jeff M</a>
+    <span class="review-card-info-age ng-binding" ng-bind="review.age"></span>,
+    <span class="review-card-info-location ng-binding" ng-bind="review.location">Kurri Kurri NSW</span>
+    <!-- ngIf: review.wouldRecommend --><div class="review-card-recommend ng-scope" ng-if="review.wouldRecommend">
+            <span class="icon-circle--xxs icon-circle--primary">
+                <span class="icon--tickmark"></span>
+            </span>
+        <span>I would recommend this to a friend!</span>
+    </div><!-- end ngIf: review.wouldRecommend -->
+</div>
+<div itemprop="reviewBody" class="review-card-text ng-binding" ng-bind="review.description">I'm just getting into my HAZY BEERS &amp; one of my favourites is the very popular BALTER EASY HAZY. This is very similar to the Balter in taste however seems to leave a nicer &amp; more dominant tangy after taste. Probably my favourite Hazy now!  Cannot understand the 1 or 2 negative reviews &amp; they obviously aren't HAZY FANS! Love this &amp; 5 STARS!</div>
+<!-- ngIf: isSyndicateReview --><div ng-if="isSyndicateReview" class="review-card-text ng-scope">Originally posted on danmurphys.com.au</div><!-- end ngIf: isSyndicateReview -->
+<div class="review-card-footer">
+    <div ng-hide="isGuestOrIsOwner(review.shopperId)" class="review-card-vote-btns ng-hide" ng-class="{ 'is-disabled': (hasVoted == true || isOwner(review.shopperId)) }" aria-hidden="true">
+        <button ng-class="{ 'is-active': vote.direction === 'up' }" ng-click="helpfulVote(true)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being helpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_up icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.yes">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+        <button ng-class="{ 'is-active': vote.direction === 'down' }" ng-click="helpfulVote(false)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being unhelpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_down icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.no">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+    </div>
+</div>
+
+</div>
+</div></wow-review-card>
+    </div><!-- end ngRepeat: review in reviews --><div tabindex="-1" ng-repeat="review in reviews" class="col-sm-6 col-xs-12 flex-basis-mobile ng-scope">
+        <wow-review-card review="review" class="ng-isolate-scope"><!-- ngInclude: --><div class="review-card well well-review flex-height-sm ng-scope" ng-include="" src="view"><div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="ng-scope">
+<!-- ngIf: badge.label.length > 0 -->
+<div class="review-card-report text-right ng-hide" ng-hide="isGuestOrIsOwner(review.shopperId)" aria-hidden="true">
+    <a ng-hide="hasReported" href="javascript:void(0)" ng-click="report(review)" aria-hidden="false">report</a>
+    <span class="is-disabled ng-hide" ng-show="hasReported" aria-hidden="true">reported</span>
+</div>
+<div class="review-card-product text-center ng-hide" ng-show="review.displayOptions.hasProductName" aria-hidden="true">
+    <h3 ng-hide="review.displayOptions.hasProductLink" class="h3 title--type-2 header--color-secondary ng-binding" ng-bind="review.productTitle" aria-hidden="false">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+
+    <!-- ngIf: review.productTitle --><a ng-if="review.productTitle" ui-sref="shop.productdetails({productId:review.productId, productName: (review.productTitle | hyphenate) })" class="ng-scope" href="/product/299034/colossal-brewing-hextra-terrestrial-hazy-xpa-375ml">
+        <h3 class="h3 title--type-1 header--color-secondary ng-binding" ng-bind="review.productTitle">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+    </a><!-- end ngIf: review.productTitle -->
+</div>
+<div class="review-card-title">
+    <h2 itemprop="name" class="h2 title--type-3 header--color-secondary ng-binding" ng-bind="review.title">Brett (the real man)</h2>
+</div>
+<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="review-card-rating">
+    <wow-star-rating is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">2</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+    <span class="sr-only">This review has <span itemprop="ratingValue" class="ng-binding">2</span> stars</span>
+</div>
+<div class="review-card-date">
+    <span itemprop="datePublished" ng-bind="review.date | date: 'dd MMMM yyyy'" class="ng-binding">04 April 2024</span>
+</div>
+<div class="review-card-info">
+    <span itemprop="author" ng-show="isSyndicateReview || !review.displayOptions.hasProfileLink" class="review-card-info-name ng-binding" ng-bind="review.displayName" aria-hidden="false">Brett (the real man)</span>
+    <a itemprop="author" ui-sref="reviews.urlFriendlyName({ urlDisplayName: review.urlDisplayName, shopperId: review.shopperId })" ng-show="review.displayOptions.hasProfileLink &amp;&amp; !isSyndicateReview" class="review-card-info-name ng-binding ng-hide" ng-bind="review.displayName" href="/customer-reviews/brett-the-real-man/4599207" aria-hidden="true">Brett (the real man)</a>
+    <span class="review-card-info-age ng-binding" ng-bind="review.age"></span>,
+    <span class="review-card-info-location ng-binding" ng-bind="review.location">Sunny Brisbane</span>
+    <!-- ngIf: review.wouldRecommend -->
+</div>
+<div itemprop="reviewBody" class="review-card-text ng-binding" ng-bind="review.description">I just cannot think of anything good to say. The can was pretty, but how do you call this an XPA . Have I turned into beer snob or are today’s beers just crap . Pick your act up Colossal Brewing !!</div>
+<!-- ngIf: isSyndicateReview --><div ng-if="isSyndicateReview" class="review-card-text ng-scope">Originally posted on danmurphys.com.au</div><!-- end ngIf: isSyndicateReview -->
+<div class="review-card-footer">
+    <div ng-hide="isGuestOrIsOwner(review.shopperId)" class="review-card-vote-btns ng-hide" ng-class="{ 'is-disabled': (hasVoted == true || isOwner(review.shopperId)) }" aria-hidden="true">
+        <button ng-class="{ 'is-active': vote.direction === 'up' }" ng-click="helpfulVote(true)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being helpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_up icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.yes">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+        <button ng-class="{ 'is-active': vote.direction === 'down' }" ng-click="helpfulVote(false)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being unhelpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_down icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.no">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+    </div>
+</div>
+
+</div>
+</div></wow-review-card>
+    </div><!-- end ngRepeat: review in reviews --><div tabindex="-1" ng-repeat="review in reviews" class="col-sm-6 col-xs-12 flex-basis-mobile ng-scope">
+        <wow-review-card review="review" class="ng-isolate-scope"><!-- ngInclude: --><div class="review-card well well-review flex-height-sm ng-scope" ng-include="" src="view"><div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="ng-scope">
+<!-- ngIf: badge.label.length > 0 -->
+<div class="review-card-report text-right ng-hide" ng-hide="isGuestOrIsOwner(review.shopperId)" aria-hidden="true">
+    <a ng-hide="hasReported" href="javascript:void(0)" ng-click="report(review)" aria-hidden="false">report</a>
+    <span class="is-disabled ng-hide" ng-show="hasReported" aria-hidden="true">reported</span>
+</div>
+<div class="review-card-product text-center ng-hide" ng-show="review.displayOptions.hasProductName" aria-hidden="true">
+    <h3 ng-hide="review.displayOptions.hasProductLink" class="h3 title--type-2 header--color-secondary ng-binding" ng-bind="review.productTitle" aria-hidden="false">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+
+    <!-- ngIf: review.productTitle --><a ng-if="review.productTitle" ui-sref="shop.productdetails({productId:review.productId, productName: (review.productTitle | hyphenate) })" class="ng-scope" href="/product/299034/colossal-brewing-hextra-terrestrial-hazy-xpa-375ml">
+        <h3 class="h3 title--type-1 header--color-secondary ng-binding" ng-bind="review.productTitle">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+    </a><!-- end ngIf: review.productTitle -->
+</div>
+<div class="review-card-title">
+    <h2 itemprop="name" class="h2 title--type-3 header--color-secondary ng-binding" ng-bind="review.title">Too pricey</h2>
+</div>
+<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="review-card-rating">
+    <wow-star-rating is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">3</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+    <span class="sr-only">This review has <span itemprop="ratingValue" class="ng-binding">3</span> stars</span>
+</div>
+<div class="review-card-date">
+    <span itemprop="datePublished" ng-bind="review.date | date: 'dd MMMM yyyy'" class="ng-binding">02 April 2024</span>
+</div>
+<div class="review-card-info">
+    <span itemprop="author" ng-show="isSyndicateReview || !review.displayOptions.hasProfileLink" class="review-card-info-name ng-binding" ng-bind="review.displayName" aria-hidden="false">The phat ox</span>
+    <a itemprop="author" ui-sref="reviews.urlFriendlyName({ urlDisplayName: review.urlDisplayName, shopperId: review.shopperId })" ng-show="review.displayOptions.hasProfileLink &amp;&amp; !isSyndicateReview" class="review-card-info-name ng-binding ng-hide" ng-bind="review.displayName" href="/customer-reviews/the-phat-ox/3527602" aria-hidden="true">The phat ox</a>
+    <span class="review-card-info-age ng-binding" ng-bind="review.age"></span>,
+    <span class="review-card-info-location ng-binding" ng-bind="review.location">Brisbane</span>
+    <!-- ngIf: review.wouldRecommend --><div class="review-card-recommend ng-scope" ng-if="review.wouldRecommend">
+            <span class="icon-circle--xxs icon-circle--primary">
+                <span class="icon--tickmark"></span>
+            </span>
+        <span>I would recommend this to a friend!</span>
+    </div><!-- end ngIf: review.wouldRecommend -->
+</div>
+<div itemprop="reviewBody" class="review-card-text ng-binding" ng-bind="review.description">Not the best Haze I’ve but ok, again, at $4 a can it’s way overpriced. My search for a value Haze continues. The little man will prevail!!</div>
+<!-- ngIf: isSyndicateReview --><div ng-if="isSyndicateReview" class="review-card-text ng-scope">Originally posted on danmurphys.com.au</div><!-- end ngIf: isSyndicateReview -->
+<div class="review-card-footer">
+    <div ng-hide="isGuestOrIsOwner(review.shopperId)" class="review-card-vote-btns ng-hide" ng-class="{ 'is-disabled': (hasVoted == true || isOwner(review.shopperId)) }" aria-hidden="true">
+        <button ng-class="{ 'is-active': vote.direction === 'up' }" ng-click="helpfulVote(true)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being helpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_up icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.yes">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+        <button ng-class="{ 'is-active': vote.direction === 'down' }" ng-click="helpfulVote(false)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being unhelpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_down icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.no">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+    </div>
+</div>
+
+</div>
+</div></wow-review-card>
+    </div><!-- end ngRepeat: review in reviews --><div tabindex="-1" ng-repeat="review in reviews" class="col-sm-6 col-xs-12 flex-basis-mobile ng-scope">
+        <wow-review-card review="review" class="ng-isolate-scope"><!-- ngInclude: --><div class="review-card well well-review flex-height-sm ng-scope" ng-include="" src="view"><div itemprop="review" itemscope="" itemtype="http://schema.org/Review" class="ng-scope">
+<!-- ngIf: badge.label.length > 0 -->
+<div class="review-card-report text-right ng-hide" ng-hide="isGuestOrIsOwner(review.shopperId)" aria-hidden="true">
+    <a ng-hide="hasReported" href="javascript:void(0)" ng-click="report(review)" aria-hidden="false">report</a>
+    <span class="is-disabled ng-hide" ng-show="hasReported" aria-hidden="true">reported</span>
+</div>
+<div class="review-card-product text-center ng-hide" ng-show="review.displayOptions.hasProductName" aria-hidden="true">
+    <h3 ng-hide="review.displayOptions.hasProductLink" class="h3 title--type-2 header--color-secondary ng-binding" ng-bind="review.productTitle" aria-hidden="false">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+
+    <!-- ngIf: review.productTitle --><a ng-if="review.productTitle" ui-sref="shop.productdetails({productId:review.productId, productName: (review.productTitle | hyphenate) })" class="ng-scope" href="/product/299034/colossal-brewing-hextra-terrestrial-hazy-xpa-375ml">
+        <h3 class="h3 title--type-1 header--color-secondary ng-binding" ng-bind="review.productTitle">Colossal Brewing Hextra Terrestrial Hazy XPA 375mL</h3>
+    </a><!-- end ngIf: review.productTitle -->
+</div>
+<div class="review-card-title">
+    <h2 itemprop="name" class="h2 title--type-3 header--color-secondary ng-binding" ng-bind="review.title">Better than more well known</h2>
+</div>
+<div itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating" class="review-card-rating">
+    <wow-star-rating is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope checked" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">4</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+    <span class="sr-only">This review has <span itemprop="ratingValue" class="ng-binding">4</span> stars</span>
+</div>
+<div class="review-card-date">
+    <span itemprop="datePublished" ng-bind="review.date | date: 'dd MMMM yyyy'" class="ng-binding">28 March 2024</span>
+</div>
+<div class="review-card-info">
+    <span itemprop="author" ng-show="isSyndicateReview || !review.displayOptions.hasProfileLink" class="review-card-info-name ng-binding" ng-bind="review.displayName" aria-hidden="false">Barrold</span>
+    <a itemprop="author" ui-sref="reviews.urlFriendlyName({ urlDisplayName: review.urlDisplayName, shopperId: review.shopperId })" ng-show="review.displayOptions.hasProfileLink &amp;&amp; !isSyndicateReview" class="review-card-info-name ng-binding ng-hide" ng-bind="review.displayName" href="/customer-reviews/barrold/10671802" aria-hidden="true">Barrold</a>
+    <span class="review-card-info-age ng-binding" ng-bind="review.age"></span>,
+    <span class="review-card-info-location ng-binding" ng-bind="review.location">Northern Beaches</span>
+    <!-- ngIf: review.wouldRecommend --><div class="review-card-recommend ng-scope" ng-if="review.wouldRecommend">
+            <span class="icon-circle--xxs icon-circle--primary">
+                <span class="icon--tickmark"></span>
+            </span>
+        <span>I would recommend this to a friend!</span>
+    </div><!-- end ngIf: review.wouldRecommend -->
+</div>
+<div itemprop="reviewBody" class="review-card-text ng-binding" ng-bind="review.description">Pleasurable XPA. Normally go for a hazy IPA or Pale but, I have returned to buy this beer on many occasion. Generally when it’s on offer. Fruity notes and mellow on hops.</div>
+<!-- ngIf: isSyndicateReview --><div ng-if="isSyndicateReview" class="review-card-text ng-scope">Originally posted on danmurphys.com.au</div><!-- end ngIf: isSyndicateReview -->
+<div class="review-card-footer">
+    <div ng-hide="isGuestOrIsOwner(review.shopperId)" class="review-card-vote-btns ng-hide" ng-class="{ 'is-disabled': (hasVoted == true || isOwner(review.shopperId)) }" aria-hidden="true">
+        <button ng-class="{ 'is-active': vote.direction === 'up' }" ng-click="helpfulVote(true)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being helpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_up icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.yes">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+        <button ng-class="{ 'is-active': vote.direction === 'down' }" ng-click="helpfulVote(false)" class="vote-btn btn--xs-small btn--has-icon btn btn-primary">
+            <span class="sr-only">Rate this as being unhelpful</span>
+            <span tabindex="-1" role="presentation" class="vote-btn-icon icon--thumbs_down icon--xs"></span>
+            <span class="vote-btn-count ng-binding" ng-bind="review.helpful.no">0</span>
+            <span class="vote-btn-voted-text">THANKS</span>
+        </button>
+    </div>
+</div>
+
+</div>
+</div></wow-review-card>
+    </div><!-- end ngRepeat: review in reviews -->
+</div>
+</section></wow-review-listing>
+</div>
+<!-- ngIf: !isCollapsed && hasMoreReviews() -->
+<div class="row" ng-show="viewLatest.length &gt; 0" aria-hidden="false">
+    <div class="col-sm-12 text-center">
+        <button class="btn btn--view-more" type="button" ng-click="isCollapsed = !isCollapsed" bws-scroll-to-element="js-latest-reviews">
+            <span class="title--type-4 header--color-secondary ng-binding">View more  reviews</span>
+            <span class="icon--xxs header--color-secondary icon--plus" ng-class="isCollapsed === true ? 'icon--plus' : 'icon--hyphen'"></span>
+        </button>
+    </div>
+</div>
+</div>
+</wow-preview-review-listing>
+                </div><!-- end ngSwitchWhen: -->
+            </div>
+        </div>
+        <div ng-show="vm.isAddingReview &amp;&amp; !vm.user.isGuest" aria-hidden="true" class="ng-hide">
+            <wow-post-review department="department" product="vm.currentProduct" is-adding-review="vm.isAddingReview" class="ng-isolate-scope"><div class="container post-review">
+<div class="row">
+    <div class="col-sm-12 text-center">
+        <div class="title-container text-center" ng-hide="slider.isLastSlide()" aria-hidden="false">
+            <h1 class="title header--color-secondary"><span class="post-review-title">Write a review</span></h1>
+            <a class="breadcrumb breadcrumb--type-2" ng-click="backToReviews()">Cancel</a>
+        </div>
+        <div class="title-container text-center">
+            <h2 class="post-review-question ng-binding" ng-bind="slider.heading">Write review as a BWS team member?</h2>
+        </div>
+        <form tabindex="0" name="reviewForm" class="post-review-form ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength ng-dirty ng-valid-parse ng-invalid-pattern">
+            <ul class="post-review-container js-post-review-container clearfix">
+                <li data-slide-index="0" tabindex="0" data-title="Write review as a BWS team member?" class="post-review-slide no-flicker slide-active ng-hide" ng-show="review.isStaffMember" aria-hidden="true">
+                    <div class="text-center">
+                        <wow-toggle class="text-center ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" options="yesNoOptions" ng-model="review.reviewAsStaffMember" aria-invalid="false"><div class="toggle">
+<!-- ngRepeat: radio in options --><div class="toggle_option ng-scope" ng-repeat="radio in options">
+    <input type="radio" ng-attr-id="{{ctrlName}}_{{$index}}" ng-model="toggle.value" ng-attr-name="{{ctrlName}}" ng-value="radio.value" class="is-hidden ng-pristine ng-untouched ng-valid ng-not-empty" name="toggle_4" value="yes" aria-invalid="false" id="toggle_4_0">
+    <label tabindex="0" for="toggle_4_0" class="toggle-btn toggle-btn-yes">
+        <span class="toggle-btn-display ng-binding" ng-bind="radio.text">yes</span>
+    </label>
+</div><!-- end ngRepeat: radio in options --><div class="toggle_option ng-scope" ng-repeat="radio in options">
+    <input type="radio" ng-attr-id="{{ctrlName}}_{{$index}}" ng-model="toggle.value" ng-attr-name="{{ctrlName}}" ng-value="radio.value" class="is-hidden ng-pristine ng-untouched ng-valid ng-not-empty" name="toggle_4" value="no" aria-invalid="false" id="toggle_4_1">
+    <label tabindex="0" for="toggle_4_1" class="toggle-btn toggle-btn-no">
+        <span class="toggle-btn-display ng-binding" ng-bind="radio.text">no</span>
+    </label>
+</div><!-- end ngRepeat: radio in options -->
+</div></wow-toggle>
+                    </div>
+                    <wow-slider-navigation slider="slider" class="ng-isolate-scope"><div class="post-review-navigation">
+<label ng-click="slider.movePrevious();$event.preventDefault();" ng-show="slider.hasPreviousBtn()" ng-attr-for="{{ctrlName}}-{{(slide.previousId())}}" class="post-review-arrow post-review-arrow--previous ng-hide" role="button" tabindex="0" aria-hidden="true">
+    <span class="sr-only">Previous slide</span>
+</label>
+<label ng-disabled="disableNext" ng-click="slider.moveNext();$event.preventDefault();" ng-show="slider.hasNextBtn()" ng-attr-for="slide-{{(slide.nextId())}}" class="post-review-arrow post-review-arrow--next" role="button" tabindex="0" aria-hidden="false" aria-disabled="false">
+    <span class="sr-only">Next slide</span>
+</label>
+</div></wow-slider-navigation>
+                </li>
+                <li data-slide-index="1" tabindex="-1" data-title="Tell us about yourself" data-can-leave="validDetails(userDetails)" class="post-review-slide no-flicker">
+                    <div ng-form="userDetails" class="ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength">
+                        <div class="form-group">
+                            <wow-input-container class="input-container" md-is-error="userDetails.displayName.$touched || reviewForm.$submitted">
+                                <label class="input-label wowLabel" for="review-displayName">Display name</label>
+                                <input class="input input--clear-white ng-pristine ng-untouched wowInput input--clear ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" id="review-displayName" type="text" name="displayName" ng-model="review.displayName" required="" ng-minlength="1" maxlength="50" aria-required="true" aria-invalid="false" autocomplete="off"><div class="wowPlaceholder">First name or nickname</div>
+                                <span ng-messages="userDetails.displayName.$error" class="input-errors wowInput-errors ng-active" aria-live="assertive">
+                                    <!-- ngMessage: required --><span class="input-error ng-scope" ng-message="required">This field is required</span>
+                                    <!-- ngMessage: minlength -->
+                                    <!-- ngMessage: maxlength -->
+                                </span>
+                            </wow-input-container>
+                        </div>
+                        <!-- ngIf: review.reviewAsStaffMember === 'yes' -->
+                        <div class="form-group">
+                            <wow-input-container class="input-container" md-is-error="userDetails.location.$touched || reviewForm.$submitted">
+                                <label class="input-label wowLabel" for="review-location">Location</label>
+                                <input ng-disabled="disableShopLocation" class="input input--clear-white ng-pristine ng-untouched wowInput input--clear ng-empty ng-invalid ng-invalid-required ng-valid-minlength" id="review-location" type="text" name="location" ng-model="review.location" required="" ng-minlength="1" aria-required="true" aria-invalid="false" autocomplete="off"><div class="wowPlaceholder">For example: Bondi, NSW</div>
+                                <span ng-messages="userDetails.location.$error" class="input-errors wowInput-errors ng-active" aria-live="assertive">
+                                    <!-- ngMessage: required --><span class="input-error ng-scope" ng-message="required">This field is required</span>
+                                    <!-- ngMessage: minlength -->
+                                </span>
+                            </wow-input-container>
+                        </div>
+                        <div class="form-group">
+                            <wow-input-container class="input-container has-value" md-is-error="userDetails.age.$touched || reviewForm.$submitted">
+                                <label class="input-label wowLabel" for="review-age">Age</label>
+                                <input age-validator="" minimum-age="18" class="input input--clear-white ng-pristine ng-untouched ng-valid wowInput input--clear ng-not-empty ng-valid-required ng-valid-minlength" id="review-age" type="number" name="age" ng-model="review.age" required="" ng-minlength="1" aria-required="true" aria-invalid="false" autocomplete="off">
+                                <span ng-messages="userDetails.age.$error" class="input-errors wowInput-errors ng-inactive" aria-live="assertive">
+                                    <!-- ngMessage: required -->
+                                    <!-- ngMessage: minimumAge -->
+                                </span>
+                            </wow-input-container>
+                        </div>
+                        <!-- ngIf: hasVintage() -->
+                    </div>
+                    <wow-slider-navigation slider="slider" disable-next="userDetails.$invalid" class="ng-isolate-scope"><div class="post-review-navigation">
+<label ng-click="slider.movePrevious();$event.preventDefault();" ng-show="slider.hasPreviousBtn()" ng-attr-for="{{ctrlName}}-{{(slide.previousId())}}" class="post-review-arrow post-review-arrow--previous ng-hide" role="button" tabindex="0" aria-hidden="true">
+    <span class="sr-only">Previous slide</span>
+</label>
+<label ng-disabled="disableNext" ng-click="slider.moveNext();$event.preventDefault();" ng-show="slider.hasNextBtn()" ng-attr-for="slide-{{(slide.nextId())}}" class="post-review-arrow post-review-arrow--next" role="button" tabindex="0" aria-hidden="false" aria-disabled="true" disabled="disabled">
+    <span class="sr-only">Next slide</span>
+</label>
+</div></wow-slider-navigation>
+                </li>
+                <li data-slide-index="2" tabindex="0" data-title="How would you rate it?" data-can-leave="validRating(reviewRating)" class="post-review-slide no-flicker">
+                    <div ng-form="reviewRating" class="post-review-rating ng-dirty ng-valid-parse ng-invalid ng-invalid-pattern">
+                        <wow-star-rating remove-schema-markup="true" is-read-only="false" ng-model="review.rating" number-of-stars="5" class="ng-untouched ng-valid ng-isolate-scope ng-not-empty ng-dirty ng-valid-parse" aria-invalid="false"><!-- ngIf: !isReadOnly --><div ng-if="!isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><div tabindex="0" ng-keypress="($event.which === 13) ? selected(star.value):0" ng-repeat="star in range | orderBy:'-value'" class="star-rating-option ng-scope" ng-class="{'checked': (star.selected === true) }">
+    <input ng-click="selected(star.value)" ng-model="selectedStar" ng-attr-name="{{ctrlName}}" ng-attr-id="{{ctrlName}}_{{$index}}" ng-value="star.value" type="radio" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="stars_5" value="5" aria-invalid="false" id="stars_5_0">
+    <label class="icon--star" title="Give 5 stars" ng-attr-for="{{ctrlName}}_{{$index}}" for="stars_5_0"></label>
+</div><!-- end ngRepeat: star in range | orderBy:'-value' --><div tabindex="0" ng-keypress="($event.which === 13) ? selected(star.value):0" ng-repeat="star in range | orderBy:'-value'" class="star-rating-option ng-scope" ng-class="{'checked': (star.selected === true) }">
+    <input ng-click="selected(star.value)" ng-model="selectedStar" ng-attr-name="{{ctrlName}}" ng-attr-id="{{ctrlName}}_{{$index}}" ng-value="star.value" type="radio" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="stars_5" value="4" aria-invalid="false" id="stars_5_1">
+    <label class="icon--star" title="Give 4 stars" ng-attr-for="{{ctrlName}}_{{$index}}" for="stars_5_1"></label>
+</div><!-- end ngRepeat: star in range | orderBy:'-value' --><div tabindex="0" ng-keypress="($event.which === 13) ? selected(star.value):0" ng-repeat="star in range | orderBy:'-value'" class="star-rating-option ng-scope" ng-class="{'checked': (star.selected === true) }">
+    <input ng-click="selected(star.value)" ng-model="selectedStar" ng-attr-name="{{ctrlName}}" ng-attr-id="{{ctrlName}}_{{$index}}" ng-value="star.value" type="radio" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="stars_5" value="3" aria-invalid="false" id="stars_5_2">
+    <label class="icon--star" title="Give 3 stars" ng-attr-for="{{ctrlName}}_{{$index}}" for="stars_5_2"></label>
+</div><!-- end ngRepeat: star in range | orderBy:'-value' --><div tabindex="0" ng-keypress="($event.which === 13) ? selected(star.value):0" ng-repeat="star in range | orderBy:'-value'" class="star-rating-option ng-scope" ng-class="{'checked': (star.selected === true) }">
+    <input ng-click="selected(star.value)" ng-model="selectedStar" ng-attr-name="{{ctrlName}}" ng-attr-id="{{ctrlName}}_{{$index}}" ng-value="star.value" type="radio" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="stars_5" value="2" aria-invalid="false" id="stars_5_3">
+    <label class="icon--star" title="Give 2 stars" ng-attr-for="{{ctrlName}}_{{$index}}" for="stars_5_3"></label>
+</div><!-- end ngRepeat: star in range | orderBy:'-value' --><div tabindex="0" ng-keypress="($event.which === 13) ? selected(star.value):0" ng-repeat="star in range | orderBy:'-value'" class="star-rating-option ng-scope" ng-class="{'checked': (star.selected === true) }">
+    <input ng-click="selected(star.value)" ng-model="selectedStar" ng-attr-name="{{ctrlName}}" ng-attr-id="{{ctrlName}}_{{$index}}" ng-value="star.value" type="radio" class="ng-pristine ng-untouched ng-valid ng-not-empty" name="stars_5" value="1" aria-invalid="false" id="stars_5_4">
+    <label class="icon--star" title="Give 1 stars" ng-attr-for="{{ctrlName}}_{{$index}}" for="stars_5_4"></label>
+</div><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span class="sr-only">Average rating: <span itemprop="" class="ng-binding">-1</span></span>
+<div class="star-rating-info" ng-transclude=""></div>
+</div><!-- end ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly -->
+</wow-star-rating>
+                        <wow-input-container class="input-container has-value" md-is-error="reviewRating.productRating.$touched || reviewForm.$submitted">
+                            <input type="hidden" name="productRating" ng-model="review.rating" ng-pattern="/^[1-5]$/" autocomplete="off" class="ng-pristine ng-untouched wowInput input--clear ng-not-empty ng-invalid ng-invalid-pattern" id="input_0d60c91b-1cfe-b240-23b4-fbe4109916b3" aria-invalid="false">
+                            <span ng-messages="reviewRating.productRating.$error" class="input-errors wowInput-errors ng-active" aria-live="assertive">
+                                 <!-- ngMessage: pattern --><span class="input-error ng-scope" ng-message="pattern">Please give this a rating</span>
+                            </span>
+                        </wow-input-container>
+                    </div>
+                    <wow-slider-navigation slider="slider" disable-next="reviewRating.$invalid" class="ng-isolate-scope"><div class="post-review-navigation">
+<label ng-click="slider.movePrevious();$event.preventDefault();" ng-show="slider.hasPreviousBtn()" ng-attr-for="{{ctrlName}}-{{(slide.previousId())}}" class="post-review-arrow post-review-arrow--previous ng-hide" role="button" tabindex="0" aria-hidden="true">
+    <span class="sr-only">Previous slide</span>
+</label>
+<label ng-disabled="disableNext" ng-click="slider.moveNext();$event.preventDefault();" ng-show="slider.hasNextBtn()" ng-attr-for="slide-{{(slide.nextId())}}" class="post-review-arrow post-review-arrow--next" role="button" tabindex="0" aria-hidden="false" aria-disabled="true" disabled="disabled">
+    <span class="sr-only">Next slide</span>
+</label>
+</div></wow-slider-navigation>
+                </li>
+                <li data-slide-index="3" tabindex="0" data-title="Would you recommend it to a mate?" class="post-review-slide no-flicker">
+                    <div class="text-center">
+                        <wow-toggle class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" options="yesNoOptions" ng-model="review.recommendToFriend" aria-invalid="false"><div class="toggle">
+<!-- ngRepeat: radio in options --><div class="toggle_option ng-scope" ng-repeat="radio in options">
+    <input type="radio" ng-attr-id="{{ctrlName}}_{{$index}}" ng-model="toggle.value" ng-attr-name="{{ctrlName}}" ng-value="radio.value" class="is-hidden ng-pristine ng-untouched ng-valid ng-not-empty" name="toggle_6" value="yes" aria-invalid="false" id="toggle_6_0">
+    <label tabindex="0" for="toggle_6_0" class="toggle-btn toggle-btn-yes">
+        <span class="toggle-btn-display ng-binding" ng-bind="radio.text">yes</span>
+    </label>
+</div><!-- end ngRepeat: radio in options --><div class="toggle_option ng-scope" ng-repeat="radio in options">
+    <input type="radio" ng-attr-id="{{ctrlName}}_{{$index}}" ng-model="toggle.value" ng-attr-name="{{ctrlName}}" ng-value="radio.value" class="is-hidden ng-pristine ng-untouched ng-valid ng-not-empty" name="toggle_6" value="no" aria-invalid="false" id="toggle_6_1">
+    <label tabindex="0" for="toggle_6_1" class="toggle-btn toggle-btn-no">
+        <span class="toggle-btn-display ng-binding" ng-bind="radio.text">no</span>
+    </label>
+</div><!-- end ngRepeat: radio in options -->
+</div></wow-toggle>
+                    </div>
+                    <wow-slider-navigation slider="slider" class="ng-isolate-scope"><div class="post-review-navigation">
+<label ng-click="slider.movePrevious();$event.preventDefault();" ng-show="slider.hasPreviousBtn()" ng-attr-for="{{ctrlName}}-{{(slide.previousId())}}" class="post-review-arrow post-review-arrow--previous ng-hide" role="button" tabindex="0" aria-hidden="true">
+    <span class="sr-only">Previous slide</span>
+</label>
+<label ng-disabled="disableNext" ng-click="slider.moveNext();$event.preventDefault();" ng-show="slider.hasNextBtn()" ng-attr-for="slide-{{(slide.nextId())}}" class="post-review-arrow post-review-arrow--next" role="button" tabindex="0" aria-hidden="false" aria-disabled="false">
+    <span class="sr-only">Next slide</span>
+</label>
+</div></wow-slider-navigation>
+                </li>
+                <li data-slide-index="4" tabindex="0" data-title="Your review" data-can-leave="validReview(reviewInfo)" class="post-review-slide no-flicker">
+                    <div ng-form="reviewInfo" class="text-center ng-pristine ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength">
+                        <div class="form-group">
+                            <wow-input-container class="input-container" md-is-error="reviewInfo.title.$touched || reviewForm.$submitted">
+                                <label class="input-label wowLabel" for="review-title">Headline</label>
+                                <input class="input input--clear-white ng-pristine ng-untouched wowInput input--clear ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" id="review-title" type="text" name="title" ng-model="review.title" required="" ng-minlength="10" ng-maxlength="40" aria-required="true" aria-invalid="false" autocomplete="off"><div class="wowPlaceholder">For example: This is one of my favourites</div>
+                                    <span ng-messages="reviewInfo.title.$error" class="input-errors wowInput-errors ng-active" aria-live="assertive">
+                                        <!-- ngMessage: required --><span class="input-error ng-scope" ng-message="required">This field is required</span>
+                                        <!-- ngMessage: minlength -->
+                                        <!-- ngMessage: maxlength -->
+                                    </span>
+                            </wow-input-container>
+                        </div>
+                        <div class="form-group">
+                            <wow-input-container class="input-container" md-is-error="reviewInfo.text.$touched || reviewForm.$submitted">
+                                <label class="input-label wowLabel" for="review-text">Description</label>
+                                <textarea ng-model="review.text" ng-model-options="{ 'updateOn': 'default blur change keypress', 'debounce': { 'default': 200, 'blur': 0, 'change': 200, 'keypress': 200 } }" class="input ng-pristine ng-untouched wowInput input--clear ng-empty ng-invalid ng-invalid-required ng-valid-minlength ng-valid-maxlength" id="review-text" type="text" name="text" required="" ng-minlength="80" ng-maxlength="300" aria-required="true" aria-invalid="false" autocomplete="off"></textarea>
+                                <span ng-messages="reviewInfo.text.$error" class="input-errors wowInput-errors ng-active" aria-live="assertive">
+                                    <!-- ngMessage: required --><span class="input-error ng-scope" ng-message="required">This field is required</span>
+                                    <!-- ngMessage: minlength -->
+                                    <!-- ngMessage: maxlength -->
+                                </span>
+                            </wow-input-container>
+                        </div>
+                    </div>
+                    <wow-slider-navigation slider="slider" disable-next="reviewInfo.$invalid" class="ng-isolate-scope"><div class="post-review-navigation">
+<label ng-click="slider.movePrevious();$event.preventDefault();" ng-show="slider.hasPreviousBtn()" ng-attr-for="{{ctrlName}}-{{(slide.previousId())}}" class="post-review-arrow post-review-arrow--previous ng-hide" role="button" tabindex="0" aria-hidden="true">
+    <span class="sr-only">Previous slide</span>
+</label>
+<label ng-disabled="disableNext" ng-click="slider.moveNext();$event.preventDefault();" ng-show="slider.hasNextBtn()" ng-attr-for="slide-{{(slide.nextId())}}" class="post-review-arrow post-review-arrow--next" role="button" tabindex="0" aria-hidden="false" aria-disabled="true" disabled="disabled">
+    <span class="sr-only">Next slide</span>
+</label>
+</div></wow-slider-navigation>
+                </li>
+                <li data-slide-index="5" tabindex="0" data-next-hidden="true" data-title="One last look before you submit" class="post-review-slide no-flicker">
+                    <div class="text-center post-review-panel">
+                        <h2 class="title title--type-2 header--color-secondary h2 ng-binding" ng-bind="review.title"></h2>
+                        <wow-star-rating remove-schema-markup="true" is-read-only="true" number-of-stars="5" ng-model="review.rating" class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-not-empty" aria-invalid="false"><!-- ngIf: !isReadOnly -->
+<!-- ngIf: isReadOnly --><div ng-if="isReadOnly" class="star-rating ng-scope">
+<!-- ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' --><span class="icon--star ng-scope" ng-class="{ 'checked': (star.selected === true) }" ng-repeat="star in range | orderBy:'-value'"><!-- ngIf: star.isHalfRating --></span><!-- end ngRepeat: star in range | orderBy:'-value' -->
+<span>
+    <span class="sr-only">Average rating: <span class="ng-binding">-1</span></span>
+    <div class="star-rating-info" ng-transclude=""></div>
+</span>
+</div><!-- end ngIf: isReadOnly -->
+</wow-star-rating>
+                        <h5 class="title title--type-3 header--color-secondary ng-binding" ng-bind="review.createdOn | date: 'dd MMMM yyyy'">18 July 2025</h5>
+                        <h5 class="title title--type-2 header--color-secondary"><span ng-bind="review.displayName" class="ng-binding"></span> <span ng-bind="review.age" class="ng-binding">0</span>, <span ng-bind="review.location" class="ng-binding"></span></h5>
+                        <div class="review-text ng-binding" ng-bind="review.text"></div>
+                        <!-- ngIf: review.recommendToFriend --><h5 class="title title--type-2 header--color-secondary title--type-4 title--friend ng-scope" ng-if="review.recommendToFriend">
+                            I would recommend this to a mate
+                        </h5><!-- end ngIf: review.recommendToFriend -->
+                        <a class="edit-link" ng-click="slider.movePrevious()" href="javascript:void(0)">Edit review</a>
+                        <div class="post-review-panel-actions text-center">
+                            <h4 class="title title--type-2 header--color-secondary title--type-4 title--approval">Your review will be pending approval once submitted.</h4>
+                            <bws-button-state-icon current-state="state" on-click="post()" states="{'LOADING': { 'label': 'SAVING' }, 'LOADED': { 'label': 'SAVED'}, 'IDLE': { 'label': 'SUBMIT'}}" class="ng-isolate-scope"><div class="button-state-icon has-loader">
+<div ng-switch="" on="currentState">
+    <!-- ngSwitchWhen: LOADED -->
+    <!-- ngSwitchWhen: LOADING -->
+    <!-- ngSwitchDefault: --><div ng-switch-default="" class="ng-scope">
+        <button class="btn btn-primary btn-state-icon btn--has-icon ng-binding" ng-click="onClick()">SUBMIT<span class="icon--right_arrow"></span></button>
+    </div><!-- end ngSwitchWhen: -->
+</div>
+</div></bws-button-state-icon>
+                            <p>By submitting, you agree to <a href="" ng-click="openTerms()">Terms &amp; Conditions.</a></p>
+                        </div>
+                    </div>
+                    <wow-slider-navigation class="ng-isolate-scope"><div class="post-review-navigation">
+<label ng-click="slider.movePrevious();$event.preventDefault();" ng-show="slider.hasPreviousBtn()" ng-attr-for="{{ctrlName}}-{{(slide.previousId())}}" class="post-review-arrow post-review-arrow--previous ng-hide" role="button" tabindex="0" aria-hidden="true">
+    <span class="sr-only">Previous slide</span>
+</label>
+<label ng-disabled="disableNext" ng-click="slider.moveNext();$event.preventDefault();" ng-show="slider.hasNextBtn()" ng-attr-for="slide-{{(slide.nextId())}}" class="post-review-arrow post-review-arrow--next ng-hide" role="button" tabindex="0" aria-hidden="true" aria-disabled="false">
+    <span class="sr-only">Next slide</span>
+</label>
+</div></wow-slider-navigation>
+                </li>
+                <li data-slide-index="6" tabindex="0" data-previous-hidden="true" data-next-hidden="true" data-title="Your review has been submitted" class="post-review-slide no-flicker">
+                    <p>It may take  up to 48 hours to appear</p>
+                    <div class="post-sent-panel"></div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn--has-icon" ng-click="backToReviews()">Back to reviews<span class="icon--right_arrow"></span></button>
+                    </div>
+                </li>
+            </ul>
+            <!-- Used for collecting the device fingerprint to send to bizaar voice -->
+            <input type="hidden" name="blackBox" id="blackBox" autocomplete="off">
+        </form>
+    </div>
+</div>
+</div>
+
+<script type="text/ng-template" id="post-review-terms-conditions">
+<div class="modal-header">
+    <div class="clearfix">
+        <span class="icon--crossmark pull-right icon--modal-close" ng-click="closeTerms()"></span>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="well">
+        <div class="text-center">
+            <h1>CUSTOMER RATINGS AND REVIEWS TERMS OF USE </h1>
+        </div>
+        <small>
+            <p>These Terms of Use govern your conduct associated with the Customer Ratings and Review service offered by BWS (the "CRR Service"). To the extent of any conflict between BWS’ Privacy Policy and these Terms of Use, these Terms of Use shall control with respect to the CRR Service.</p>
+            <p>By submitting any content to BWS, you represent and warrant that: You are the sole author and owner of the intellectual property rights thereto; All "moral rights" that you may have in such content have been voluntarily waived by you; All content that you post is accurate; You are at least 18 years old; Use of the content you supply does not violate these Terms of Use and will not cause injury to any person or entity. You further agree and warrant that you shall not submit any content: That is known by you to be false, inaccurate or misleading; That impersonates any person or entity, or otherwise mislead as to the origin of any content within a review; That infringes any third party's copyright, patent, trademark, trade secret or other proprietary rights or rights of publicity or privacy; That violates any law, statute, ordinance or regulation (including, but not limited to, those governing export control, consumer protection, unfair competition, anti-discrimination or false advertising); That is, or may reasonably be considered to be, defamatory, libelous, hateful, racially or religiously biased or offensive, unlawfully threatening or unlawfully harassing to any individual, partnership or corporation; For which you were compensated or granted any consideration by any third party; That includes any information that references other websites, addresses, email addresses, contact information or phone numbers; That contains any computer viruses, worms or other potentially damaging computer programs or files. You agree to indemnify and hold BWS (and its officers, directors, agents, subsidiaries, joint ventures, employees and third-party service providers, including but not limited to Bazaarvoice, Inc.), harmless from all claims, demands, and damages (actual and consequential) of every kind and nature, known and unknown including reasonable attorneys' fees, arising out of a breach of your representations and warranties set forth above, or your violation of any law or the rights of a third party. For any content that you submit, you grant BWS a perpetual, irrevocable, royalty-free, transferable right and license to use, copy, modify, delete in its entirety, adapt, publish, translate, create derivative works from and/or sell and/or distribute such content and/or incorporate such content into any form, medium or technology throughout the world without compensation to you. All content that you submit may be used at BWS' sole discretion. BWS reserves the right to change, condense or delete any content on BWS’ website that BWS deems, in its sole discretion, to violate the content guidelines or any other provision of these Terms of Use. BWS does not guarantee that you will have any recourse through BWS to edit or delete any content you have submitted. Ratings and written comments are generally posted within two to four business days. However, BWS reserves the right to remove or to refuse to post any submission for any reason. You acknowledge that you, not BWS, are responsible for the contents of your submission. None of the content that you submit shall be subject to any obligation of confidence on the part of BWS, its agents, subsidiaries, affiliates, partners or third party service providers and their respective directors, officers and employees. By submitting your email address in connection with your rating and review, you agree that BWS and its third party service providers may use your email address to contact you about the status of your review and other administrative purposes.</p>
+        </small>
+    </div>
+
+</div>
+</script>
+</wow-post-review>
+        </div>
+    </div>
+</div>
+</div>
+</wow-review-overview><!-- end ngIf: !restrictedCategory -->
+    <!-- End: Bazaar voice integration -->
+    <!-- Start: Additional details -->
+    <!-- ngIf: !restrictedCategory --><section ng-if="!restrictedCategory" class="bg--white section--type-2 section ng-scope">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 text-center">
+                    <h1 class="header--color-secondary">Product Details</h1>
+
+                    <span ng-class="{'icon--beer': department === 'Beer', 'icon--wineglass': department === 'Wine',  'icon--glasses_spirits': department === 'Spirits'}" class=" icon--xlg"></span>
+                    <h2 class="title--type-2 h2--type-2 header--color-secondary ng-binding"></h2>
+
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <p itemprop="description" class="body-text ng-binding" ng-bind-html="productDetails.productcopy">Resistance is futile, uncover a world of unexpected flavour. A superb balance of unworldly tropical aromas and super juicy flavours creates a refreshingly hazy encounter of cosmic magnitude.</p>
+                        </div>
+                    </div>
+
+                    <!-- ngIf: productDetails.awardwinner === 'true' || productDetails.awardwinner === 'True' --><div ng-if="productDetails.awardwinner === 'true' || productDetails.awardwinner === 'True'" class="ng-scope">
+                        <p class="ng-binding"><strong>Awards Won</strong> <br>
+                            Bronze - Australian International Beer Awards 2025, Gold - Country Winner 'Australia' for 'Pale Beer - American Style Pale Ale' - World Beer Awards 2024.</p>
+                    </div><!-- end ngIf: productDetails.awardwinner === 'true' || productDetails.awardwinner === 'True' -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-left">
+
+                    <div bws-expandable-content="" expandabletarget="product-additional-details" text-content="details" is-expanded-large-format="true" class="product-additional-details_container text-center ng-isolate-scope"><strong ng-class="{'visible-xs' : isExpandedLargeFormat}" class="visible-xs"><a bws-scroll-to-element="expandable-content" class="link--secondary ng-binding" href="" ng-click="toggleContent()">Hide details</a></strong>
+<ng-transclude scroll-to-element-target="expandable-content" ng-show="isExpanded" class="js-expandable-content" tabindex="-1" aria-hidden="false">
+
+                        <div expandable-content="product-additional-details" class="js-expandable-content list--details js-list-details clear-fix ng-scope">
+                            <ul class="text-left">
+                                <!-- ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Liquor Style</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">XPA</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Beer Type</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">XPA</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Country Of Origin</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">Australia</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">IBU</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">14</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Alcohol %</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">5%</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Standard Drinks</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">1.5</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Liquor Size</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">375ML</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Closure Type</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">Can Closure</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Bottle Opener Required</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">false</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Brand</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">Colossal Brewing</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><li class="list--details_item clearfix ng-scope" ng-repeat="(key, value) in AdditionalDetailsDisplay" ng-if="value.DisplayName !== 'Awards Won' &amp;&amp; value.DisplayName.toLowerCase() !== 'categorynodename' &amp;&amp; value.DisplayName.toLowerCase() !== 'category_node_name'">
+                                    <strong class="list-details_header ng-binding">Product Number</strong>
+
+                                    <!-- ngIf: key!=='stockcode' --><span ng-if="key!=='stockcode'" class="pull-right list-details_info ng-binding ng-scope">975336</span><!-- end ngIf: key!=='stockcode' -->
+                                    <!-- ngIf: key==='stockcode' -->
+                                </li><!-- end ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay --><!-- ngIf: value.DisplayName !== 'Awards Won' && value.DisplayName.toLowerCase() !== 'categorynodename' && value.DisplayName.toLowerCase() !== 'category_node_name' --><!-- end ngRepeat: (key, value) in AdditionalDetailsDisplay -->
+                            </ul>
+                            <small class="additional-details_footnote margin-top-15">Spot a mistake? <a ui-sref="shop.contact" href="/contact">Contact us</a></small>
+                        </div>
+                    </ng-transclude></div>
+                </div>
+            </div>
+            <div class="row" id="medallia-product-details-page-survey"></div>
+
+        </div>
+    </section><!-- end ngIf: !restrictedCategory -->
+    <bws-banner design-type="Footer" stockcode="product.Stockcode" class="ng-isolate-scope"><section>
+<!-- ngRepeat: banner in banners -->
+</section>
+</bws-banner>
+
+    <!-- ngIf: CategoryLeafNodeNames !== undefined && CategoryLeafNodeNames!=='' --><section class="section--type-2 section ng-scope" ng-if="CategoryLeafNodeNames !== undefined &amp;&amp; CategoryLeafNodeNames!==''">
+        <div class="container">
+            <div class="row">
+                <div class="title-container text-center">
+                    <h1 class="header--color-secondary">Discover more</h1>
+                </div>
+            </div>
+
+            <div class="row link-category-row">
+                <!-- ngRepeat: (key, value) in CategoryLeafNodeNames --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center link-category-column ng-scope" ng-show="displayCategoryLink || checkWithDevice($index)" ng-repeat="(key, value) in CategoryLeafNodeNames" aria-hidden="false">
+                      <a class="link-category-button btn btn-primary ng-binding" href="/beer/all-beer" ng-click="handleCategoryAnalytics(value)">All Beer <span class="icon--right_arrow"></span> </a>
+                </div><!-- end ngRepeat: (key, value) in CategoryLeafNodeNames --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center link-category-column ng-scope" ng-show="displayCategoryLink || checkWithDevice($index)" ng-repeat="(key, value) in CategoryLeafNodeNames" aria-hidden="false">
+                      <a class="link-category-button btn btn-primary ng-binding" href="/beer/beer-style/ale" ng-click="handleCategoryAnalytics(value)">Ale <span class="icon--right_arrow"></span> </a>
+                </div><!-- end ngRepeat: (key, value) in CategoryLeafNodeNames --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center link-category-column ng-scope ng-hide" ng-show="displayCategoryLink || checkWithDevice($index)" ng-repeat="(key, value) in CategoryLeafNodeNames" aria-hidden="true" style="">
+                      <a class="link-category-button btn btn-primary ng-binding" href="/beer/craft-beer" ng-click="handleCategoryAnalytics(value)">Craft Beer <span class="icon--right_arrow"></span> </a>
+                </div><!-- end ngRepeat: (key, value) in CategoryLeafNodeNames --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center link-category-column ng-scope ng-hide" ng-show="displayCategoryLink || checkWithDevice($index)" ng-repeat="(key, value) in CategoryLeafNodeNames" aria-hidden="true">
+                      <a class="link-category-button btn btn-primary ng-binding" href="/beer/xpa" ng-click="handleCategoryAnalytics(value)">XPA <span class="icon--right_arrow"></span> </a>
+                </div><!-- end ngRepeat: (key, value) in CategoryLeafNodeNames --><div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 text-center link-category-column ng-scope ng-hide" ng-show="displayCategoryLink || checkWithDevice($index)" ng-repeat="(key, value) in CategoryLeafNodeNames" aria-hidden="true">
+                      <a class="link-category-button btn btn-primary ng-binding" href="/beer/brand/colossal-brewing" ng-click="handleCategoryAnalytics(value)">Colossal Brewing <span class="icon--right_arrow"></span> </a>
+                </div><!-- end ngRepeat: (key, value) in CategoryLeafNodeNames -->
+            </div>
+
+            <div class="device-xs visible-xs"></div>
+            <div class="device-sm visible-sm"></div>
+            <div class="device-md visible-md"></div>
+            <div class="device-lg visible-lg"></div>
+
+            <div class="row" ng-show="!displayCategoryLink &amp;&amp; !checkWithDevice(CategoryLeafNodeNames.length-1)" aria-hidden="false">
+                    <div class="col-sm-12 text-center">
+                        <button class="btn" type="button" ng-click="displayCategoryLink = !displayCategoryLink">
+                            <span class="title--type-4 header--color-secondary">View all</span>
+                            <span class="icon--xxs header--color-secondary icon--plus" ng-class="'icon--plus'"></span>
+                        </button>
+                    </div>
+                </div>
+        </div>
+    </section><!-- end ngIf: CategoryLeafNodeNames !== undefined && CategoryLeafNodeNames!=='' -->
+
+    <!-- End: Additional product details -->
+    <script type="text/ng-template" id="stock-nearby-product-detail">
+
+        <div class="modal-header">
+            <div class="clearfix">
+                <span class="icon--crossmark pull-right icon--modal-close" ng-click="closePopup()"></span>
+            </div>
+        </div>
+
+        <div class="modal-body">
+
+            <div class="locator-search_loader" ng-if="!productParent.Stockcode">
+                <wow-loading-spinner></wow-loading-spinner>
+            </div>
+
+            <stock-nearby-locator
+                ng-if="product.Stockcode"
+                ng-class="{'modal-restricted-product' : restrictedCategory}"
+                pack-size="product.ProductData.webpacktype"
+                stock-code="product.Stockcode"
+                promotion-type="product.PromotionType"
+            ></stock-nearby-locator>
+        </div>
+
+    </script>
+
+    <script type="text/ng-template" id="image-zoom">
+        <div class="modal-header">
+            <div class="clearfix">
+                <span class="icon--crossmark pull-right icon--modal-close" ng-click="closePopup()"></span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <slick settings="slickConfigImageZoom" ng-if="slickConfigImageZoomLoaded">
+                <div data-image-name="{{imageName}}" class="product-detail-slick-item" ng-repeat="imageName in imageZoomCarousel track by $index">
+                    <img-product
+                            img-alt="{{ product.ProductData.imageAlt }}"
+                            img-class="product-image"
+                            img-name="imageName"
+                            img-size="{{imageZoomSize}}"
+                            lazy-load="true"
+                            ng-if="productDetails.image1"></img-product>
+
+                </div>
+
+                <div ng-if="videoUrl" class="iframe-responsive-wrapper">
+                    <div class="iframe-responsive-inner-wrapper">
+                        <iframe class="iframe-responsive" src="{{videoUrl}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </slick>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="why-this-store-modal">
+        <div class="modal-header">
+            <div class="clearfix">
+                <span class="icon--crossmark pull-right icon--modal-close" ng-click="closePopup()"></span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4>Why this store?</h4>
+                    <p>Google will show the prices available at the BWS store closest to your location when searching.</p>
+                    <p>Important note: If you’re using third-party services such as a VPN, the store shown may be different to the usual pick-up or delivery preference you’ve used previously.</p>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    
+</div>

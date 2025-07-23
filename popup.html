@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BWS Scraper</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      min-width: 300px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #showLinksBtn, #navigateLinksBtn, #downloadCsvBtn, #downloadJsonBtn {
+      display: none;
+      background-color: #28a745;
+    }
+    #showLinksBtn:hover, #navigateLinksBtn:hover, #downloadCsvBtn:hover, #downloadJsonBtn:hover {
+      background-color: #218838;
+    }
+    #linksContainer {
+      margin-top: 10px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+    a {
+      display: block;
+      margin-bottom: 5px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <h3>BWS Content Scraper</h3>
+  <button id="startScraping">Star Scarpping</button>
+  <button id="navigateLinksBtn">Navigating Links</button>
+  <button id="downloadCsvBtn">Download CSV</button>
+  <button id="downloadJsonBtn">Download JSON</button>
+  <div id="linksContainer"></div>
+  <script src="popup.js"></script>
+</body>
+</html> 

@@ -1,0 +1,24 @@
+{
+  "name": "BWS Content Scraper",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "An extension to scrape content from BWS.",
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "alarms", "downloads"],
+  "host_permissions": ["https://bws.com.au/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://bws.com.au/beer/craft-beer*"],
+      "js": ["content.js"]
+    },
+    {
+      "matches": ["https://bws.com.au/product/*"],
+      "js": ["scrape-details.js"]
+    }
+  ]
+} 
